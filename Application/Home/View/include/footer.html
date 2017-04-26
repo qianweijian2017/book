@@ -1,0 +1,236 @@
+﻿ 
+<div class="footer" id="footer">
+   <div class="f-line">
+
+   </div>
+    <div class="f-main">
+        <ul class="icon-ul">
+            <li class="icon" >
+                <a href="" >
+                    <img src="__HOME__/imgs/icon-放心购.png" height="50" width="50"/>
+                </a>
+                <span class="f-text">放心购</span>
+            </li>
+            <li class="icon">
+                <a href="">
+
+                    <img src="__HOME__/imgs/安全.png" height="50" width="50"/></a>
+                <span class="f-text">安全保障</span>
+            </li>
+            <li class="icon">
+                <a href=""><img src="__HOME__/imgs/正品.png" height="50" width="50"/>
+
+                   </a>
+                <span class="f-text">正品保障</span>
+            </li>
+            <li class="icon">
+                <a href="">
+                    <img src="__HOME__/imgs/认证.png" height="50" width="50"/></a>
+                <span class="f-text">专业认证</span>
+            </li>
+        </ul>
+    </div>
+    <div class="f-under" >
+            <div class="descript">
+                <ul >
+                    <li><a href="">公司简介</a></li>
+                    <li><a href="">Investor Relations</a></li>
+                    <li><a href="">诚聘英才</a></li>
+                    <li><a href="">网站联盟</a></li>
+                    <li><a href="">趣书招商</a></li>
+                    <li><a href="">机构销售</a></li>
+                    <li><a href="">手机趣书</a></li>
+                    <li><a href="">官方 Blog</a></li>
+                    <li><a href="" style="border-right: none">热词搜索</a></li>
+                </ul>
+            </div>
+        <p style="margin-top: 50px;display: block;float: left">
+            Copyright (C) 趣书网 2004-2017, All Rights Reserved
+            <img src="__HOME__/imgs/icon-放心购.png" height="30" width="30"/>
+            京ICP证041189号出版物经营许可证 新出发京批字第直0673号
+            </p>
+    </div>
+</div> 
+<script type="text/javascript" src="__LIB__/jquery-1.9.1.min.js"></script>
+  
+<script type="text/javascript">
+    var key = 0;
+    var obox = $(".runpic");
+    var oUl = document.getElementById("oUl");
+    var oLi = oUl.children;
+    var num = document.getElementById("num");
+    var numLi = num.children;
+    var timer = null, speed = 1600;
+    var lBtn = $(".left-btn");
+    var rBtn = $(".right-btn");
+    var position = document.getElementById("position");
+    var mydd = document.getElementById("mydd");
+    var maddul = document.getElementById("maddul");
+    var buy = document.getElementById("buy");
+    var buyul = document.getElementById("buyul");
+    var sort = document.getElementById("sort");
+    var sortul = document.getElementById("sortul");
+    var leftul = document.getElementById("home-1-left-ul"); 
+    var footer = document.getElementById("footer"); 
+    obox.mouseenter(function () {
+        lBtn.stop().animate({
+            left: 0, opacity: 0.3
+        });
+        rBtn.stop().animate({
+            right: 0, opacity: 0.3
+        });
+
+        obox.stop().hover().stop()
+    }).mouseleave(function () {
+
+        lBtn.stop().animate({
+            left: -33
+        });
+        rBtn.stop().animate({
+            right: -33
+        })
+    });
+    lBtn.hover(function () {
+        $(this).css({
+            opacity: 0.6
+        })
+    }).mouseleave(function () {
+        $(this).css({
+            opacity: 0.3
+        })
+    });
+    rBtn.hover(function () {
+        $(this).css({
+            opacity: 0.6
+        })
+    }).mouseleave(function () {
+        $(this).css({
+            opacity: 0.3
+        })
+    });
+    oLi[0].className = "cur";
+    for (var k = 0; k < oLi.length; k++) {
+        oLi[k].style.zIndex = 10 - k;
+    }
+
+    //点击ol轮播图片
+    $(".num ul li").mouseenter(function () {
+
+        key = $(".runpic ul li").eq($(this).index()).index();  //设定key值
+        $(".num ul li").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
+        $(".runpic ul li").eq($(this).index()).stop().animate({
+            opacity: 1,
+            zIndex: 10
+        }).siblings().stop().animate({
+            opacity: 0,
+            zIndex: 9
+        });
+    });
+
+
+    //点击事件,上一张
+    lBtn.click(function () {
+        key = key - 1;
+        if (key < 0) {
+            key = 3
+        }
+        $(".num ul li").eq(key).addClass("cur").siblings().removeClass('cur');
+        $(".runpic ul li").eq(key).stop().animate({
+            opacity: 1,
+            zIndex: 3
+        }).siblings().stop().animate({
+            opacity: 0,
+            zIndex: 2
+        });
+
+    });
+
+    //点击事件,下一张
+    rBtn.click(function () {
+        key = key + 1;
+        if (key > 3) {
+            key = 0
+        }
+        $(".num ul li").eq(key).addClass("cur").siblings().removeClass('cur');
+        $(".runpic ul li").eq(key).stop().animate({
+            opacity: 1,
+            zIndex: 3
+        }).siblings().stop().animate({
+            opacity: 0,
+            zIndex: 2
+        });
+    });
+
+    $('.gundong-title ul li').mouseenter(function () {
+
+        $('.gundong-title ul li').eq($(this).index()).stop().animate({
+            opacity: .5
+
+        }).siblings().stop().animate({
+            opacity: 1,
+            zIndex: 2
+        });
+
+
+    });
+    $('.gundong-title ul li').eq(0).mouseenter(function () {
+
+        $('.c-1').stop().animate({
+            marginTop:"0px"
+        });
+    });
+    $('.gundong-title ul li').eq(1).mouseenter(function () {
+        $('.c-1').stop().animate({
+            marginTop:"-300px"
+        });
+    });
+    //监听滚动条显示导航
+  
+    $(document).scroll(function(){ 
+        $getHeight=$(document).scrollTop();
+       
+        console.log($getHeight);
+        if ($getHeight>1){
+            $('.body-right').stop().show().animate({
+                opacity:1
+
+            })
+        }if ($getHeight<400||$getHeight>2496){
+            $('.body-right').stop().hide().animate({
+                opacity:0
+            })
+        }
+    });
+    $('.body-right ul li').on('mouseover',function () {
+
+        $(this).find('a').stop().show().animate({
+          paddingLeft:"10px"
+
+        });
+
+
+    });
+    $('.body-right ul li').on('mouseout',function () {
+
+        $(this).find('a').stop().animate({
+            paddingLeft:"35px"
+        });
+
+
+    });
+    $('.roket').on('click',function () {
+        var interval=setInterval(function () {
+            if($(window).scrollTop()<10){
+                clearInterval(interval);
+            }else{
+                 var sTop=$(window).scrollTop()/1.3; 
+                 $(window).scrollTop(sTop); 
+            }
+            
+
+        },15);
+    })
+
+</script>
+</body>
+</html>

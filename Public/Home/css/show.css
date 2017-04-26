@@ -1,0 +1,94 @@
+ .super-item{
+    margin-right: 10px; 
+    padding: 10px 10px 25px;
+    width: 180px;
+    height: 220px;
+    margin-bottom: 20px;
+    border: 1px solid #E5E5E5;
+    border-bottom: 3px solid #fff;
+    background-color: #fff; 
+    transition: box-shadow .5s,border-bottom .5s; 
+    float: left; 
+}
+ .super-item:hover{
+    box-shadow: 2px 2px 5px #C3C3C3;
+    -moz-box-shadow:2px 2px 5px #C3C3C3;
+    border-bottom: 3px solid #FF2832; 
+}
+.super-item .book-pic{
+    text-align: center;
+}
+.super-item  img{
+     transition: transform .5s; 
+}
+ .super-item:hover img{
+    transform: translate(-5px,0);
+ }
+  .super-item .super-item-per{
+    height: 20px;
+    overflow: hidden;
+    clear: both;
+  }
+ 
+ .super-item .super-item-per span{
+    font-size: 50px;
+    color: #F74D3E;
+}
+ 
+ .super-item .super-item-per .ColorGreen{
+    color: #55BF5A;
+}
+ .super-item .super-item-per small{
+    color: #F74D3E;
+    font-size: 15px;
+    margin-left: -15px;
+}
+ .super-item .super-item-per p{
+    color: #818181;
+    font-size: 13px; 
+}
+ .super-item  .super-item-recent{ 
+    height: 35px;
+    line-height: 15px;
+    margin-top: 10px;
+    padding: 0 10px;
+    overflow: hidden;
+}
+ .super-item  .super-item-recent a{
+     text-decoration: none;
+     color: #000;
+ }
+ .super-item  .super-item-recent a:hover{
+     color: #d81e06;
+ }
+ .super-item  .super-item-recent span{
+    color: #6F6F6F;
+}
+ .super-item-price{ 
+     width: 100%;
+     font-family: "Arial";
+     font-weight: bold;
+     font-size: 18px;
+     color: #F10214;
+     float: left;  
+ }
+ .super-item-price .dis{ 
+     float: right;
+     color: #aaa;
+     font-weight: normal;
+     font-size: 14px;
+     text-decoration: line-through;
+ }
+ .super-item .book-pic a img{
+     height: 150px;
+     width: 150px;
+ }
+ .super-item .book-pic{
+     height: 150px;
+     width: 180px;
+ }
+ .show-book{
+     margin: 50px 0 10px 67px;
+     height:540px;
+     overflow: hidden;
+ }
