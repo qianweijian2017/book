@@ -6,4 +6,5 @@ return array(
 		'__HOME__'=>__ROOT__."/Public/Home",
 		'__LIB__'=>__ROOT__."/Public/Lib"
 	),
+	
 );

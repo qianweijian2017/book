@@ -1,0 +1,105 @@
+ <include file='include/header'/>
+
+ 
+ <div class="ManagerBar"> 
+			<div class="btn-group oper_bar">
+				<button class="btn btn-danger btn-md" id="deleteItem">
+					<i class="fa fa-trash-o fa-fw"></i>
+					<span>删除</span>
+				</button>
+			</div> 
+			<div class="btn-group oper_bar"> 
+				<a href="javascript:;" class="btn btn-success btn-md" >
+					<i class="fa fa-pencil"></i>
+					<span>编辑</span>
+				</a> 
+				<a href="javascript:;" class="btn btn-primary btn-md" >
+					<i class="fa fa-pencil"></i>
+					<span>添加</span>
+				</a> 
+				<a href="{$Think.ACTION_NAME}" class="btn  btn-warning btn-md" class="btn_refresh">
+					<i class="fa fa-refresh"></i>
+					<span>显示全部</span>
+				</a> 
+			</div>
+			 <!-- 默认是用户页面的搜索 -->
+		<div class="search_box pull-right">
+			<form method="get" action=""> 
+				<button type="submit" class="btn btn-info btn-md pull-right" id="search_news">
+					<i class="fa fa-search"></i>
+                    <span>搜索</span>
+				</button>
+				<label class="form-group pull-right"> 
+					<input type="search" name="search_keyword" class="form-control" placeholder="请输入搜索内容" />
+				</label> 
+				<select class="pull-right search_select" name="search_col"> 
+					<option value="0" >
+						 用户ID
+					</option>
+					 <option value="0" >
+						 禁止登陆
+					</option>
+				</select>
+			</form>
+		</div>	  
+	</div>  
+ <!-- 用户页面的搜索end -->
+<!-- 用户列表显示开始 -->
+<table class="table table-hover common_table">
+		<tr>
+			<th class="select">
+			 	<input type="checkbox" class="check_all hidden" id="check_all">
+				<label for="check_all" class="btn btn-success btn-md">
+					<i class="fa fa-square-o"></i>
+					<span>全选/反选</span>
+				</label> 
+			</th>
+			 <th>
+			 	菜单id
+			 </th>
+			 <th>
+			 	排序
+			 </th>
+			  <th>
+			 	类型
+			 </th>
+			  <th>
+			 	是否隐藏
+			 </th>    
+		</tr>
+		 <volist name="menulist" id="menuitem">
+			<tr>
+			 	<td>
+			 		<input type="checkbox" class="sub_check" name="sub_check" value="{$menuitem.id}">
+			 	</td>
+			 	<td>
+			 		{$menuitem.id}
+			 	</td>
+			 	<td>
+			 		{$menuitem.sort}
+			 	</td> 
+			 	 <td>
+			 		{$menuitem.type_name}
+			 	</td> 
+			 	<td>
+			 		<if condition="$menuitem.status eq 1">
+			 			显示
+			 			<else/>
+			 	 		隐藏	
+			 		</if>
+			 	</td>
+			  
+			 </tr>  
+		  </volist>
+	</table> 
+	 <!-- 分页 -->
+	 <div class="b-page"> 
+		{$sPages} 
+	 </div>
+	<!-- 分页 end-->
+</div>
+
+
+
+
+<include file='include/footer'/> 

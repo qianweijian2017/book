@@ -1,11 +1,11 @@
 .text-center {
     text-align: center;
 }
- 
+
 .nav-box {
     background-color: #f9f9f9;
     border-bottom: 1px solid #f2f2f2;
-    width: 1360px;
+    width: 100%;
     font-family: arial, simsun;
     font: 12px 'Hiragino Sans GB', "simsun", "Arial";
 }
@@ -151,8 +151,9 @@
 }
 
 .search-box .search-select .text {
+
     font: 16px/36px "Microsoft Yahei";
-    width: 100px; 
+    width: 107px;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -162,7 +163,7 @@
     color: #fff;
     background-color: #FF2832;
 }
- 
+
 .search-box .search-select .text-icon {
     width: 13px;
     height: 7px;
@@ -180,7 +181,7 @@
     height: 20px;
     border: 2px solid #ff2832;
     border-left: none;
-    padding: 9px 0 7px 10px;
+    padding: 9px 0 7px 0px;
     left: 730px;
     top: 20px;
     z-index: 2;
@@ -401,18 +402,37 @@
     color: #646464;
     overflow: hidden;
 }
-
+.home-1 .home-1-right .gundong .gundong-c{
+    padding-left: 8px ;
+}
 .home-1 .home-1-right .gundong .gundong-c li a {
     text-align: center;
     padding-left: 8px;
     text-decoration: none;
     color: #646464;
     font-family: "Microsoft Yahei";
+} 
+.home-1 .home-1-right .gundong .gundong-c .c .yushoname{
+    font-size: 12px;
+    text-align: center; 
+    
+}
+.home-1 .home-1-right .gundong .gundong-c .c .yushoname span{
+    line-height: 16px;
+}
+.home-1 .home-1-right .gundong .gundong-c .c >span{
+    margin: auto 30px 10px 10px;
+    color: #d81e06;
+    float: left;
+}
+.home-1 .home-1-right .gundong .gundong-c .c .writer{
+   color: #646464;
+   font-size: 14px; 
+
 }
 
 .home-1 .home-1-right .gundong .gundong-c li {
-    color: #646464;
-
+    color: #646464; 
     line-height: 25px;
     padding-left: 10px;
     width: 183px;
@@ -505,40 +525,52 @@
     filter: alpha(opacity=20);
     z-index: 11;
 }
-.home-1 .home-1-center .runpic .left-btn { 
-    left: -33px;
-    background: url(../imgs/home_sprite_1507.png) no-repeat -0px -70px; 
-    top: 122px;
-    font-size: 0; 
-}
 
-.home-1 .home-1-center .runpic .right-btn {  
-    right: -33px; 
-    background: url(../imgs/home_sprite_1507.png) no-repeat -35px -70px; 
-    top: 122px;  
-}
-.home-1 .home-1-center .runpic .left-btn,
-.home-1 .home-1-center .runpic .right-btn{ 
+.home-1 .home-1-center .runpic .left-btn {
     position: absolute;
     width: 33px;
+    left: -33px;
     height: 70px;
     overflow: hidden;
+    background: url(../imgs/home_sprite_1507.png) no-repeat -0px -70px;
     background-color: #000;
+    top: 122px;
+    font-size: 0;
     line-height: 99px;
     cursor: pointer;
     opacity: 0.2;
     filter: alpha(opacity=20);
     z-index: 11;
-} 
+}
+
+.home-1 .home-1-center .runpic .right-btn {
+    position: absolute;
+    width: 33px;
+    height: 70px;
+    right: -33px;
+    overflow: hidden;
+    background: url(../imgs/home_sprite_1507.png) no-repeat -35px -70px;
+    background-color: #000;
+    top: 122px;
+    font-size: 0;
+    line-height: 99px;
+    cursor: pointer;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+    z-index: 11;
+}
+
 .home-1 .home-1-center .runpic .num {
     position: absolute;
     margin: auto;
     left: 86%;
-    bottom: 0; 
+    bottom: 0;
+
 }
 
 .home-1 .home-1-center .runpic .num ul {
-    list-style: none; 
+    list-style: none;
+
 }
 
 .home-1 .home-1-center .runpic .num ul li {
@@ -559,7 +591,8 @@
     background-color: #000;
 }
 
-.home-1 .home-1-left .home-1-left-ul { 
+.home-1 .home-1-left .home-1-left-ul {
+
     width: 197px;
     margin: 0;
     padding: 0;
@@ -698,8 +731,8 @@
 
 .c a img {
     float: left;
-    width: 130px;
-    height: 130px;
+    width: 112px;
+    height: 116px;
 }
 
 .yushouname {
@@ -712,15 +745,17 @@
 }
 
 .body-right {
+    z-index: 50;
     background: #fff;
     opacity: 0;
+    right:-180px;
     border-right: 1px solid #cccccc;
     box-shadow: 0px 2px 30px 1px #888888;
     float: left;
     position: fixed;
     margin-left: 85%;
     top: 50px;
-    z-index: 99;
+    font-size: 14px;
 }
 
 .body-right ul li {
@@ -732,7 +767,7 @@
     display: block;
     text-align: center;
     color: #000;
-    padding: 10px 35px;
+    padding: 10px 25px;
     text-decoration: none;
 
 }
@@ -792,7 +827,7 @@
     margin:  auto;
 }
 .f-under li{
-display: inline-block;
+    display: inline-block;
 }
 .f-under ul li a{
     text-align: center;
@@ -809,4 +844,225 @@ display: inline-block;
     width: 100%;
     margin: auto;
     margin-bottom: 20px;
+}
+
+/*login.css*/
+.load{
+    opacity: 0;
+    display: none;
+    box-shadow: 0px 5px 80px 10px #888888;
+    border-radius: 2px;
+    z-index: 100;
+    width: 300px;
+    height: 300px;
+    left: 530px;
+    top: 0px;
+    position: fixed;
+    background: #ffffff;
+
+}
+.load .tips{
+    height: 30px;
+    line-height: 30px;
+    color: #d81e06;
+}
+.load .inp_box{
+    margin: auto;
+    width: 100%;
+}
+.load .inp {
+    float: right;
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 25%;
+    /*left: 10%;*/
+    text-align: center;
+}
+.load .input{
+    width: 70%;
+    height: 30px;
+}
+.load .inp_pwd{
+    top: 35%;
+}
+
+.load .btn {
+    width: 90%;
+    height: 30px;
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    background: #d81e06;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+.login-title{
+
+    color: #ffffff;
+    /*display: inline-block;*/
+    background: #d81e06;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    /*position: absolute;*/
+    cursor: move;
+    border-radius: 2px 2px 0 0;
+
+}
+.load h2 a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.load h2{
+    top:0;
+    right:0;
+    position: absolute;
+    float:right;
+    padding: 8px 10px;
+    text-align: right;
+    font-size: 18px;
+
+}
+.load .reg_{
+    margin-top: 40px;
+    background: #0D72CC;
+}
+/*reg.css*/
+.reg{
+    opacity: 0;
+    display: none;
+    box-shadow: 0px 5px 80px 10px #888888;
+    border-radius: 2px;
+    z-index: 100;
+    width: 300px;
+    height: 300px;
+    left: 530px;
+    top: 0px;
+    position: fixed;
+    background: #ffffff;
+
+}
+.reg .tips{
+    height: 30px;
+    line-height: 30px;
+    color: #d81e06;
+}
+.reg .inp_box{
+    width: 100%;
+}
+.reg .inp {
+    float: right;
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 25%;
+    /*left: 10%;*/
+    text-align: center;
+}
+.reg .input{
+    width: 70%;
+    height: 30px;
+}
+.reg .inp_pwd{
+    top: 35%;
+}
+
+.reg .btn {
+    width: 90%;
+    height: 30px;
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    background: #d81e06;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+.reg-title{
+
+    color: #ffffff;
+    /*display: inline-block;*/
+    background: #d81e06;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    /*position: absolute;*/
+    cursor: move;
+    border-radius: 2px 2px 0 0;
+
+}
+.reg h2 a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.reg h2{
+    top:0;
+    right:0;
+    position: absolute;
+    float:right;
+    padding: 8px 10px;
+    text-align: right;
+    font-size: 18px;
+
+}
+.reg .btn{
+    margin-top: 40px; 
+}
+.zhedangceng{
+    display: none;
+    top:0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    z-index:50;
+    opacity: 0.5;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+._label{
+    font-weight: 700;
+    float:left;
+    display: inline-block;
+    height: 30px;
+    line-height:30px;
+    margin-left: 15px;
+}
+.inp-icon{
+    position: absolute;
+
+}
+.pwd{
+    top: 143px;
+    left: 26px;
+}
+.user{
+    top: 72px;
+    left: 24px;
+}
+.user  img{
+       height: 42px;
+    width: 41px;
+}
+.pwd  img{
+    height: 32px;
+    width: 37px;
+}
+.input{
+    outline: medium;
+    border: 2px solid #d81e06;
+    padding-left: 50px;
+
+}
+.input:focus{
+    border: 2px solid #d81e06;
 }

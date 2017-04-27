@@ -23,7 +23,7 @@
                     <!-- 左侧菜单开始 -->
                     <volist name="menulist" id="menuitem"> 
                         <li >
-                            <a href="">{$menuitem.type_name}</a>
+                            <a href="{:U('book/booklist')}">{$menuitem.type_name}</a>
                         </li>
                     </volist>
                     <!-- 左侧菜单end -->
@@ -99,33 +99,24 @@
                                 <li><a href="">100元无门槛现金券限量领</a></li>
                             </ul>
                         </div>
-                        <div class="c">
-                            <a href="">
-                                <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg">
-                            </a>
-                            <a href="" style="text-decoration: none;color: #000;" class="yushoname">
-                                《
-                                <span class="yushouname">红楼梦三打三防沙发上地方</span>
-                                》
-                            </a>
-                            <span class="writer" style="color: #cccccc;">liweijian</span>
-                            <span style="color: #d81e06;display: block;margin-top: 15px">$22.87</span>
-
-                        </div>
-                        <div class="c">
-                            <a href="">
-                                <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg">
-                            </a>
-                            <a href="" style="text-decoration: none;color: #000;" class="yushoname">
-                                《
-                                <span class="yushouname">红楼梦三打三防沙发上地方</span>
-                                》
-                            </a>
-                            <span class="writer" style="color: #cccccc;">liweijian</span>
-                            <span style="color: #d81e06;display: block;margin-top: 15px">
-                                $22.87
-                            </span>                       
+                        <volist name="hotlist" id="hotitem">
+                            <div class="c">
+                                <a href="">
+                                    <img src="/tushuguanli{$hotitem['img_path']}">
+                                </a>
+                                <a href="" style="text-decoration: none;color: #000;" class="yushoname">
+                                    《
+                                    <span class="yushouname">{$hotitem['book_name']}</span>
+                                    》
+                                </a>
+                                <span class="writer">
+                                    {$hotitem['book_author']}
+                                </span>
+                                <span>
+                                    ${$hotitem['book_prince']}
+                                </span>                       
                              </div>
+                         </volist>
                     </div>
                 </div>
 
@@ -155,7 +146,7 @@
             <div class="super-item right-margin">
             <div class="book-pic">
                 <a href=""> 
-                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg" height="384" width="450"/></a>
+                    <img src="/tushuguanli{$hotitem.img_path}" height="384" width="450"/></a>
             </div>
             <div class="super-item-recent">
                 <!-- 书名 -->
@@ -163,12 +154,12 @@
             </div>
             <div class="super-item-per">
                 <!-- 书作者 -->
-                <p>{$hotitem.book_name}</p>
+                <p>{$hotitem.book_author}</p>
             </div>
             <div class="super-item-price">
                 <!-- 书价格 -->
-                <span>${$hotitem.book_prince}</span>
-                <span class="dis">${$hotitem.book_zk_prince}</span>
+                <span>￥{$hotitem.book_prince}</span>
+                <span class="dis">￥{$hotitem.book_zk_prince}</span>
             </div>
         </div>
         </volist>
@@ -198,7 +189,7 @@
             <div class="super-item right-margin">
                 <div class="book-pic">
                     <a href=""> 
-                        <img src="http://img3x8.ddimg.cn/18/23/23206608-1_l.jpg" height="384" width="450"/></a>
+                        <img src="/tushuguanli{$newitem.img_path}" height="384" width="450"/></a>
                 </div>
                 <div class="super-item-recent">
                     <a href="">{$newitem.book_name}</a>
@@ -235,7 +226,7 @@
             <div class="super-item right-margin">
                 <div class="book-pic">
                     <a href=""> 
-                        <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg" height="384" width="450"/></a>
+                        <img src="/tushuguanli{$pullitem.img_path}" height="384" width="450"/></a>
                 </div>
                 <div class="super-item-recent">
                     <a href="">{$pullitem.book_name}</a>
@@ -257,12 +248,9 @@
         <li style="text-align: center;background: #ff2832;color: #fff;height: 30px;">
             <img src="__HOME__/imgs/book_nav.png" height="30" width="50"/>
         </li>
-        <li><a href="">新书推荐str</a></li>
-        <li><a href="">新书推荐str</a></li>
-        <li><a href="">新书推荐str</a></li>
-        <li><a href="">新书推荐str</a></li> 
-        <li><a href="">新书推荐str</a></li>
-        <li><a href="">新书推荐str</a></li> 
+       <volist name="menulist" id="menuitem">  
+            <li><a href="">{$menuitem.type_name}</a></li>
+        </volist>
         <li style="text-align: center;background: #ff2832;color: #fff;line-height: 40px;height:40px">
             <span href="javascript:" style="color: #000;text-align: center;cursor: pointer" class="roket">
                 <img src="__HOME__/imgs/roket.png" height="30" width="50"/>
@@ -272,6 +260,8 @@
     </ul>
 </div>
 <!--//body结束-->
+
+
  
 
 <include file='include/footer'/>

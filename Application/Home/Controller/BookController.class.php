@@ -37,6 +37,13 @@ class BookController extends Controller
 		 $this->display();
 	}
 	
+	public function bookdetail()
+	{
+		$this->display();
+	}
+
+
+
 	 public function getSort($iSort)
 	 {
 

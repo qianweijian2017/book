@@ -1,0 +1,4 @@
+[ 2017-04-27T15:50:09+08:00 ] ::1 /tushuguanli/index.php/Home/Book/booklist/sort/collect.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'descbook_collect desc LIMIT 0,8' at line 1
+ [ SQL语句 ] : SELECT `book_name`,`type_name`,`book_author`,`book_detail`,`book_collect`,`book_prince`,`img_path`,c.id FROM bk_book b INNER JOIN bk_menu c on b.book_type=c.id  ORDER BY book_publish_time descbook_collect desc LIMIT 0,8  
+

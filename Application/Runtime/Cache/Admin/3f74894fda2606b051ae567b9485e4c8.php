@@ -6,8 +6,7 @@
  	<title>图书管理系统</title><link rel="stylesheet" type="text/css" href="/tushuguanli/Public/Lib/font-awesome-4.7.0/css/font-awesome.min.css">
  	<link rel="stylesheet" type="text/css" href="/tushuguanli/Public/Lib/bootsrapv3.3.7/css/bootstrap.min.css">
  	<link rel="stylesheet" type="text/css" href="/tushuguanli/Public/Admin/css/reset.css">
- 	<link rel="stylesheet" type="text/css" href="/tushuguanli/Public/Admin/css/common.css">
- 	<link rel="stylesheet" type="text/css" href="/tushuguanli/Public/Admin/css/main.css">
+ 	<link rel="stylesheet" type="text/css" href="/tushuguanli/Public/Admin/css/common.css"> 
  	<!-- 获取控制器名,全局变量 --> 
 	 <script type="text/javascript">
 	 	var controllerName="<?php echo (CONTROLLER_NAME); ?>";
@@ -39,12 +38,7 @@
 				<a href="">
 					<i class="fa fa-cog"></i>
 				</a>
-			</li>
-			<li>
-				<a href="">
-					<i class="fa fa-search"></i>
-				</a>
-			</li>
+			</li> 
 		</ul>
 	</div>
 </header>
@@ -61,14 +55,20 @@
 		 	</dt>  
 		 	 <!-- 标题end -->
 		 	 <!-- 选项 -->
+		 	 <dd>
+		 		<a href="<?php echo U('nav/navlist');?>">
+					<p><i class="fa  fa-plane"></i></p>
+		 			<span>首页导航</span>
+		 		</a>
+		 	</dd>
 		 	<dd>
-		 		<a href="">
+		 		<a href="<?php echo U('menu/menulist');?>">
 					<p><i class="fa  fa-bookmark"></i></p>
 		 			<span>首页菜单</span>
 		 		</a>
 		 	</dd>
 		 	<dd>
-		 		<a href="">
+		 		<a href="<?php echo U('book/bookdetail');?>">
 					<p><i class="fa fa-cart-plus"></i></p>
 		 			<span>首页商品</span>
 		 		</a>
@@ -108,7 +108,7 @@
 		 	<dd>
 		 		<a href="">
 					<p><i class="fa fa-cart-arrow-down"></i></p>
-		 			<span>已下单</span>
+		 			<span>购物车列表</span>
 		 		</a>
 		 	</dd>
 		 	<dd>
@@ -138,11 +138,7 @@
 	</div>
 	
  
-<!-- 编辑box -->
-	<section id="user_box" class="hide_box">
-	 	
-	</section>
-	<!-- 编辑box end -->
+ 
  
  <div class="ManagerBar"> 
 			<div class="btn-group oper_bar">
@@ -190,13 +186,13 @@
 <!-- 用户列表显示开始 -->
 <table class="table table-hover common_table">
 		<tr>
-			 <th class="select">
+			<th class="select">
 			 	<input type="checkbox" class="check_all hidden" id="check_all">
 				<label for="check_all" class="btn btn-success btn-md">
 					<i class="fa fa-square-o"></i>
 					<span>全选/反选</span>
 				</label> 
-			 </th>
+			</th>
 			 <th>
 			 	用户id
 			 </th>
@@ -205,14 +201,14 @@
 			 </th>
 			  <th>
 			 	用户密码
-			 </th> 
+			 </th>
+			  <th>
+			 	注册时间
+			 </th>  
 			 <th>
 			 	禁止登陆状态
-			 </th> 
-			 <th>
-			 	注册时间
-			 </th> 
-		 </tr>
+			 </th>  		 
+		</tr>
 		 <?php if(is_array($userlist)): $i = 0; $__LIST__ = $userlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$useritem): $mod = ($i % 2 );++$i;?><tr>
 			 	<td>
 			 		<input type="checkbox" class="sub_check" name="sub_check" value="<?php echo ($useritem["id"]); ?>">
@@ -225,22 +221,27 @@
 			 	</td>
 			 	<td>
 			 		<?php echo ($useritem["user_pwd"]); ?>
-			 	</td>
-			 	<td class="user_ban">
-			 		<?php echo ($useritem["user_ban"]); ?>
-			 	</td>
+			 	</td> 
 				<td>
 			 		<?php echo (date("Y-m-d H:i:s",$useritem["crete_time"])); ?>
 			 	</td>
+			 	<td class="user_ban">
+			 		<?php if($useritem["user_ban"] == 1): ?>允许
+			 			 <?php else: ?>
+			 			 禁止<?php endif; ?>
+			 	</td>
 			 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-	</table>
-	
+	</table> 
+	 <!-- 分页 -->
+	 <div class="b-page"> 
+		<?php echo ($sPages); ?> 
+	 </div>
+	<!-- 分页 end-->
 </div>
- 
-
-<!-- 用户列表显示开始end -->
 
 
+
+<!-- 用户列表显示开始end --> 
  
  	</div>
 </div>

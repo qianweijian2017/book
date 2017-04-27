@@ -46,6 +46,7 @@
  .super-item .super-item-per p{
     color: #818181;
     font-size: 13px; 
+    padding-left: 5px;
 }
  .super-item  .super-item-recent{ 
     height: 35px;

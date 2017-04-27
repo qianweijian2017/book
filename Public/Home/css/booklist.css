@@ -94,7 +94,7 @@
 .book_list  .listshow .listshow-item .prince{
 	position: absolute;
 	height: 50px;
-	width: 53px;
+	width: 56px;
 	right: 50px;
 	top:15px; 
 	text-align: center;
@@ -105,7 +105,7 @@
 	top:0;
 	right: 0;
 	text-shadow:1px 1px 1px #000;
-	font-size: 6em;
+	font-size: 5em;
 }
 
 .book_list  .listshow .listshow-item .prince span{ 
@@ -116,7 +116,7 @@
 	width: 50px;
 	height: 50px; 
 	color: #fff;
-	font-size: 16px;
+	font-size: 20px;
 	z-index: 88;
 	font-weight: 600;
 }

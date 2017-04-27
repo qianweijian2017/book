@@ -5,8 +5,7 @@
  	<title>图书管理系统</title><link rel="stylesheet" type="text/css" href="__LIB__/font-awesome-4.7.0/css/font-awesome.min.css">
  	<link rel="stylesheet" type="text/css" href="__LIB__/bootsrapv3.3.7/css/bootstrap.min.css">
  	<link rel="stylesheet" type="text/css" href="__ADMIN__/css/reset.css">
- 	<link rel="stylesheet" type="text/css" href="__ADMIN__/css/common.css">
- 	<link rel="stylesheet" type="text/css" href="__ADMIN__/css/main.css">
+ 	<link rel="stylesheet" type="text/css" href="__ADMIN__/css/common.css"> 
  	<!-- 获取控制器名,全局变量 --> 
 	 <script type="text/javascript">
 	 	var controllerName="{$Think.CONTROLLER_NAME}";
@@ -38,12 +37,7 @@
 				<a href="">
 					<i class="fa fa-cog"></i>
 				</a>
-			</li>
-			<li>
-				<a href="">
-					<i class="fa fa-search"></i>
-				</a>
-			</li>
+			</li> 
 		</ul>
 	</div>
 </header>
@@ -60,14 +54,20 @@
 		 	</dt>  
 		 	 <!-- 标题end -->
 		 	 <!-- 选项 -->
+		 	 <dd>
+		 		<a href="{:U('nav/navlist')}">
+					<p><i class="fa  fa-plane"></i></p>
+		 			<span>首页导航</span>
+		 		</a>
+		 	</dd>
 		 	<dd>
-		 		<a href="">
+		 		<a href="{:U('menu/menulist')}">
 					<p><i class="fa  fa-bookmark"></i></p>
 		 			<span>首页菜单</span>
 		 		</a>
 		 	</dd>
 		 	<dd>
-		 		<a href="">
+		 		<a href="{:U('book/bookdetail')}">
 					<p><i class="fa fa-cart-plus"></i></p>
 		 			<span>首页商品</span>
 		 		</a>
@@ -107,7 +107,7 @@
 		 	<dd>
 		 		<a href="">
 					<p><i class="fa fa-cart-arrow-down"></i></p>
-		 			<span>已下单</span>
+		 			<span>购物车列表</span>
 		 		</a>
 		 	</dd>
 		 	<dd>

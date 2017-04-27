@@ -1,12 +1,15 @@
-﻿ <!DOCTYPE html>
+﻿<?session_start();?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="__HOME__/css/main.css">
+    <link rel="stylesheet" href="__HOME__/css/reset.css"> 
     <link rel="stylesheet" href="__HOME__/css/book_reset.css"> 
-
     <link rel="stylesheet" href="__HOME__/css/show.css">
+    <link rel="stylesheet" href="__HOME__/css/common.css">
+    <link rel="stylesheet" href="__LIB__/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <!--//导航nav开始-->
@@ -48,7 +51,7 @@
         <div class="nav-right">
             <ul class="nav-list">
                 <li class=" login" style="float: left">
-                    <div class="nav-login">欢迎光临趣书网，请<a href="" class="reg" style="color: #e63735;">注册</a>或<a href="#" style="color: #e63735">登录</a>成为会员</div>
+                  <div class="nav-login">欢迎光临趣书网，请<a href="javascript:;" onclick="reg_fn();return false;" class="reg_btn" style="color: #e63735;">注册</a>或<a href="javascript:; " onclick="load_fn();return false;"style="color: #e63735">登录</a>成为会员</div> 
                 </li>
                 <li class="nav-item"><a class="nav-item-bo">购物车<b class="car-num">0</b></a></li>
                 <li class="nav-item"><a class="nav-item-bo">我的订单</a></li>
