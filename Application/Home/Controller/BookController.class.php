@@ -7,10 +7,14 @@ use \Org\Util\page;
 */
 class BookController extends Controller
 {
+	/**
+	 * 书籍列表
+	 * @return [type] [description]
+	 */
 	public function booklist()
 	{
-		 $book=M("book"); 
-		 $menu=M("menu");
+		 $book=M("book"); //创建书本对象
+		 $menu=M("menu");//创建菜单对象
 		 $menulist= $menu->field("type_name,id")->select(); 
 		 if(I('type')){
 		 	 $where='book_type='.I('type');//是否有分类 
@@ -25,25 +29,30 @@ class BookController extends Controller
 
 		 $booklist=$book->alias("b")
 					->field("book_name,type_name,book_author,book_detail,
-							book_collect,book_prince,img_path,c.id")
+							book_collect,book_prince,img_path,c.id")//查询所需要的字段
 					->where($where)	 
-					->join("__MENU__ c on b.book_type=c.id") 
+					->join("__MENU__ c on b.book_type=c.id") 		//通过字段关联表
 					->order($sort)
 					->limit($page->firstRow.',8')
 					->select(); 
- 		 $this->assign('sPages',$sPages);// 赋值分页输出  
+ 		 $this->assign('sPages',$sPages);// 赋值分页
 		 $this->assign("booklist", $booklist);
   		 $this->assign("menulist",$menulist);	 
-		 $this->display();
+		 $this->display();		//展示模板
 	}
-	
+	/**
+	 * 书本详情
+	 * @return [] [description]
+	 */
 	public function bookdetail()
 	{
 		$this->display();
 	}
-
-
-
+ 	/**
+ 	 * 根据条件获取分类 
+ 	 * @param  [string] $iSort [条件]
+ 	 * @return [string]        [拼凑where条件]
+ 	 */
 	 public function getSort($iSort)
 	 {
 
@@ -55,7 +64,6 @@ class BookController extends Controller
 	 		 	$sort="book_up_time desc";
 	 			break;
 	 	}
-
 	 	return $sort;
 	 	
 	 }
