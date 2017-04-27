@@ -1,6 +1,11 @@
 body{
-	
+	 
 }
+/*table表格点击背景*/
+.tb_bg{
+	background-color: #C9C9C9;
+}
+
 .header{
 	height: 80px;
 	line-height: 80px; 
@@ -20,14 +25,14 @@ body{
 .header-logo{
 	text-align: center;
 }
-.header-logo a{
-	color: #fff;  
+.header-logo a{ 
+	color: #fff;
 }
  
 .header .header-title{
 	font-size: 20px;
 	font-weight: 600;
-	text-indent: 50px;
+	text-indent: 50px; 
 	float: left;
 
 }
@@ -45,12 +50,11 @@ body{
  	width: 18%;
 	text-align: center;
 }
-.header .header-userbar ul >li> a{
-	color:#808080;
+.header .header-userbar ul >li> a{ 
 	font-size: 20px;
 }
 .header .header-userbar ul >li> a:hover{
-	color: #000;
+	color: #f00;
 } 
 
 /*左侧导航*/
@@ -135,10 +139,19 @@ body{
 #search_news{
 	margin: 0 0 0 10px;
 }
-
+ #main{
+    padding-right: 0;
+ 	min-height: 400px;
+ 	width: 80%;
+ 	margin-left: 1%;
+ 	float: left;
+ }
 
 /*列表显示table*/
- 
+table.common_table{
+	font-size: 13px;
+
+} 
 table.common_table tr th{
 height: 30px;
 line-height: 30px;
@@ -154,7 +167,62 @@ table.common_table tr td{
 table.common_table tr td:first-child{
 	text-align: left;
 }
-table.common_table tr td:first-child input{
-	margin-left: 15px;
-
+table.common_table tr td:first-child input[type='checkbox']{
+	margin-left: 15px; 
+	width: 15px;
+	height: 15px;
 }
+table.common_table tr:hover{
+	background-color: #C9C9C9;
+	cursor: pointer;
+}
+table.common_table tr:first-child:hover{
+	background-color: #fff;
+}
+table.common_table tr td.book_title{
+	width: 200px;
+}
+
+
+/*分页*/
+.b-page {
+    background:#fff;
+    box-shadow:0 1px 2px 0 #e2e2e2;
+}
+.b-page .page {
+    width:100%;
+    padding:10px 15px;
+    background:#fff;
+    text-align:center;
+    overflow:hidden;
+}
+.b-page .page .first,.b-page .page .prev,.b-page .page .current,.b-page .page .num,.b-page .page .current,.b-page .page .next,.b-page .page .end {
+    padding:8px 16px;
+    margin:0 5px;
+    display:inline-block;
+    color:#008cba;
+    border:1px solid #f2f2f2;
+    border-radius:5px;
+}
+.b-page .page .first:hover,.b-page .page .prev:hover,.b-page .page .current:hover,.b-page .page .num:hover,.b-page .page .current:hover,.b-page .page .next:hover,.b-page .page .end:hover {
+    text-decoration:none;
+    background:#51AFFF;
+    color: #fff;
+}
+.b-page .page .current {
+    background-color:#51AFFF;
+    color:#fff;
+    border-radius:5px;
+    border:1px solid #51AFFF;
+}
+.b-page .page .current:hover {
+    text-decoration:none;
+    background:#51AFFF;
+}
+
+
+
+
+ 
+
+

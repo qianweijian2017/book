@@ -22,9 +22,6 @@
  			 alert(data.info);
  			 location.reload();
  		})
- 	})
-
- 	
-
+ 	}) 
 
  }())

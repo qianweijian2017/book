@@ -1,0 +1,111 @@
+<include file='include/header'/> 
+<link rel="stylesheet" type="text/css" href="__HOME__/css/booklist.css">
+
+<div id="booklist" class="book_list">
+<!-- 左侧开始 -->
+	<aside class="sidebar"> 
+		<dl>
+			<dt> 	
+				 <a href="javascript:;">分类</a>
+			</dt>
+			<!-- 第一行 -->
+			<dd>
+				<a href="{:U('Book/booklist')}">
+					全部
+				</a>
+			</dd>
+			 <volist name="menulist" id="menuitem">
+				<dd>
+				 
+					<a href="{:U('Book/booklist',array('type'=>$menuitem['id']))}">	
+						{$menuitem['type_name']}
+					</a>
+				</dd>
+			 </volist>
+		</dl> 
+	</aside>
+	<!-- 左侧end-->
+ 	<!-- 右侧显示列表开始 -->
+ 	<section id="listshow" class="listshow">
+ 		<div class="list-sort-tilte clearfix">
+ 			<ul class="clearfix">
+ 				<li>
+	 				<a href="{:U('Book/booklist',array('sort'=>'people'))}" class="active">
+	 					人气排序
+	 					<i class="fa fa-arrow-down" ></i>
+	 				</a>
+ 				</li>
+ 				<li>
+	 				<a href="{:U('Book/booklist',array('sort'=>'collect'))}">
+	 					总收藏
+	 				</a>
+ 				</li>
+
+ 				<li>
+	 				<a href="{:U('Book/booklist',array('sort'=>'up_time'))}">
+	 					上传时间
+	 				</a>
+ 				</li> 
+ 			</ul>
+ 		</div>
+		<div class="listshow-list">  
+	 		<volist name="booklist" id="bookitem">
+				<!-- 单个选项开始 -->
+				<div class="listshow-item">
+					<div class="prince">
+						<span>
+							￥{$bookitem.book_prince|trim=###}
+						</span>
+						<i class="fa fa-bookmark fa-5x">
+							
+						</i> 
+					</div>
+				 	<div class="list-item-img">
+				 		<a href="">
+				 			<img src="/tushuguanli{$bookitem.img_path}">
+				 		</a>
+				 	</div>
+				 	 <dl>
+				 	 	<dt class="list-item-title">
+				 	 		<a href="javascript:;">{$bookitem.book_name}</a>
+				 	 	</dt>
+				 	 	<dd>
+				 	 		<span>
+				 	 			作者:
+				 	 		</span>  
+				 	 		<span>
+					 	 		<a href="">
+					 	 			{$bookitem.book_author}
+					 	 		</a>
+				 	 		</span>
+							<span>
+								<a href="">
+									{$bookitem.type_name}
+								</a> 
+							</span>
+				 	 	</dd>
+				 	 	<dd>
+				 	 		 <p>
+				 	 			 {$bookitem.book_detail}
+				 	 		 </p>
+				 	 	</dd>
+				 	 	<dd>
+				 	 		<span>
+				 	 			收藏人数:{$bookitem.book_collect}
+				 	 		</span>
+				 	 	</dd>
+				 	 </dl>
+				 </div>
+				 <!-- 单个选项end -->
+				 </volist> 
+		</div>
+		 <!-- 分页 -->
+		 <div class="b-page"> 
+			{$sPages} 
+		 </div>
+		<!-- 分页 end-->
+ 	</section>
+ 	<!-- 右侧显示列表end -->
+</div>
+
+<include file='include/footer'/> 

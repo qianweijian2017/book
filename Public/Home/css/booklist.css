@@ -1,0 +1,166 @@
+#booklist{
+	height: 500px;
+	margin-top: 30px; 
+	font-family: PingFangSC-Regular,'-apple-system',Simsun;
+}
+#booklist a{
+	text-decoration: none;
+}
+.book_list {
+	width: 1200px;
+	margin: 0 auto;
+}
+.book_list .sidebar{
+	float: left;
+	width: 230px;
+}
+ 
+.book_list .sidebar dl{
+	width: 98%;
+}
+.book_list .sidebar dl a{
+	color: #000;
+}
+.book_list .sidebar dl dt {
+	width: 100%; 
+	
+	line-height: 50px;
+	text-indent: 5px;
+}
+
+.book_list .sidebar dl dd{
+	margin: 7px 7px 7px 0;
+	text-indent: 10px;
+	float: left;
+}
+.book_list .sidebar dl dd a{
+	padding: 5px; 
+	font-size: 12px;
+}
+.book_list .sidebar dl dd a,
+.book_list  .listshow .list-sort-tilte ul li a,
+.book_list  .listshow .listshow-item dl dt a,
+.book_list  .listshow .listshow-item dl dd a{ 
+	transition: color ease .5s;
+}
+.book_list .sidebar dl dd a:hover,
+.book_list  .listshow .list-sort-tilte ul li a:hover,
+.book_list  .listshow .listshow-item dl dt a:hover,
+.book_list  .listshow .listshow-item dl dd a:hover{
+	color: #f00;
+}
+.book_list  .listshow{
+	width: 948px;
+	float: left; 
+}
+
+/*分类选项box*/
+.book_list  .listshow .list-sort-tilte{
+	padding:10px 0 ;
+	background-color: #F7F6F2;
+}
+.book_list  .listshow .list-sort-tilte ul{
+	float: left;
+}
+.book_list  .listshow .list-sort-tilte ul li{
+	float: left;
+	margin:0 12px;
+}
+.book_list  .listshow .list-sort-tilte ul li a{
+	color: #A6A6A6;
+}
+.book_list  .listshow .list-sort-tilte ul li a.active{
+	color: #ED4259;
+	font-weight: 600;
+}
+.book_list  .listshow .list-sort-tilte ul li a i{
+	font-weight: 300; 
+}
+/*列表显示*/
+
+ 
+.book_list  .listshow .listshow-item{
+	width: 48%;
+	float: left;
+	padding: 25px 10px 25px 0;
+	position: relative;
+}
+.book_list  .listshow .listshow-item .prince{
+	position: absolute;
+	height: 50px;
+	width: 53px;
+	right: 50px;
+	top:10px; 
+	text-align: center;
+}
+.book_list  .listshow .listshow-item .prince i{
+	color: #E21524;
+	position: absolute;
+	top:0;
+	right: 0;
+	text-shadow:1px 1px 1px #000;
+	font-size: 6em;
+}
+
+.book_list  .listshow .listshow-item .prince span{ 
+	display: block;
+	position: relative;
+	text-align: center;
+	line-height: 50px;
+	width: 50px;
+	height: 50px; 
+	color: #fff;
+	font-size: 16px;
+	z-index: 88;
+	font-weight: 600;
+}
+.book_list  .listshow .listshow-item .list-item-img{
+	width: 110px;
+	height:136px;
+	overflow: hidden;
+	float: left;
+}
+.book_list  .listshow .listshow-item .list-item-img img{
+	width: 100%;
+	height: 100%;
+	transition: transform .5s ease;
+}
+.book_list  .listshow .listshow-item .list-item-img img:hover{
+	transform: scale(1.1);
+}
+.book_list  .listshow .listshow-item .list-item-img a{
+	display: block;
+	overflow: hidden;
+}
+.book_list  .listshow .listshow-item dl{
+	width: 320px;
+	float: left;
+	padding: 5px 0 5px 10px;
+}
+.book_list  .listshow .listshow-item dl dt{ 
+	font-size: 20px;
+	font-weight: 600;
+} 
+.book_list  .listshow .listshow-item dl dt.list-item-title{
+	width: 235px;	
+	height: 30px;
+	overflow: hidden;
+}
+.book_list  .listshow .listshow-item dl dt a{
+	color: #262626;
+}
+.book_list  .listshow .listshow-item dl dd{
+	line-height: 29px;
+}
+.book_list  .listshow .listshow-item dl dd span,
+.book_list  .listshow .listshow-item dl dd span a{
+	color: #A6A6A6;
+	font-size: 12px;
+}
+.book_list  .listshow .listshow-item dl dd p{
+	height: 50px;
+	line-height: 25px;
+	font-size: 14px;
+	overflow: hidden; 
+	color: #666;
+}
