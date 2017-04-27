@@ -21,13 +21,19 @@
 .book_list .sidebar dl a{
 	color: #000;
 }
-.book_list .sidebar dl dt {
+.book_list .sidebar >dl >dt{
 	width: 100%; 
-	
+	text-align: center;
 	line-height: 50px;
+	height: 50px;
+	background-color: #ED4259;
 	text-indent: 5px;
 }
-
+.book_list .sidebar >dl >dt a{
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+}
 .book_list .sidebar dl dd{
 	margin: 7px 7px 7px 0;
 	text-indent: 10px;
@@ -69,7 +75,7 @@
 .book_list  .listshow .list-sort-tilte ul li a{
 	color: #A6A6A6;
 }
-.book_list  .listshow .list-sort-tilte ul li a.active{
+.book_list  .listshow .list-sort-tilte ul li.active a{
 	color: #ED4259;
 	font-weight: 600;
 }
@@ -90,11 +96,11 @@
 	height: 50px;
 	width: 53px;
 	right: 50px;
-	top:10px; 
+	top:15px; 
 	text-align: center;
 }
 .book_list  .listshow .listshow-item .prince i{
-	color: #E21524;
+	color: #ED4259;
 	position: absolute;
 	top:0;
 	right: 0;

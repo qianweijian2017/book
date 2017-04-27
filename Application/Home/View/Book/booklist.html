@@ -1,6 +1,6 @@
 <include file='include/header'/> 
 <link rel="stylesheet" type="text/css" href="__HOME__/css/booklist.css">
-
+ 
 <div id="booklist" class="book_list">
 <!-- 左侧开始 -->
 	<aside class="sidebar"> 
@@ -10,14 +10,14 @@
 			</dt>
 			<!-- 第一行 -->
 			<dd>
-				<a href="{:U('Book/booklist')}">
+				<a href="{:U('Book/booklist',array('sort'=>'2'))}">
 					全部
 				</a>
 			</dd>
 			 <volist name="menulist" id="menuitem">
 				<dd>
 				 
-					<a href="{:U('Book/booklist',array('type'=>$menuitem['id']))}">	
+					<a href="{:U('Book/booklist',array('type'=>$menuitem['id'],'sort'=>'2'))}">	
 						{$menuitem['type_name']}
 					</a>
 				</dd>
@@ -29,22 +29,24 @@
  	<section id="listshow" class="listshow">
  		<div class="list-sort-tilte clearfix">
  			<ul class="clearfix">
- 				<li>
-	 				<a href="{:U('Book/booklist',array('sort'=>'people'))}" class="active">
+ 				<li class="<php>title_active(I('sort'),'2');</php>" >
+	 				<a href="{:U('Book/booklist',array('sort'=>'2'))}" >
 	 					人气排序
-	 					<i class="fa fa-arrow-down" ></i>
+	 					<php>select_active(I('sort'),"2");</php>
 	 				</a>
  				</li>
- 				<li>
+ 				<li   class="<php>title_active(I('sort'),'collect');</php>">
 	 				<a href="{:U('Book/booklist',array('sort'=>'collect'))}">
 	 					总收藏
+	 					<php>select_active(I('sort'),"collect");</php>
 	 				</a>
  				</li>
-
- 				<li>
+ 				<li  class="<php>title_active(I('sort'),'up_time');</php>">
 	 				<a href="{:U('Book/booklist',array('sort'=>'up_time'))}">
 	 					上传时间
+	 					<php>select_active(I('sort'),"up_time");</php>
 	 				</a>
+
  				</li> 
  			</ul>
  		</div>
