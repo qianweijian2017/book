@@ -156,7 +156,7 @@
 	color: #262626;
 }
 .book_list  .listshow .listshow-item dl dd{
-	line-height: 29px;
+	line-height: 25px;
 }
 .book_list  .listshow .listshow-item dl dd span,
 .book_list  .listshow .listshow-item dl dd span a{
@@ -166,6 +166,7 @@
 .book_list  .listshow .listshow-item dl dd p{
 	height: 50px;
 	line-height: 25px;
+	width: 90%;
 	font-size: 14px;
 	overflow: hidden; 
 	color: #666;
