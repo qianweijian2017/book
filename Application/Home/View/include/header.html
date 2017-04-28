@@ -1,5 +1,4 @@
-﻿<?session_start();?>
-<!DOCTYPE html>
+﻿ 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -60,7 +59,11 @@
         <div class="nav-right">
             <ul class="nav-list">
                 <li class=" login" style="float: left">
-                  <div class="nav-login">欢迎光临趣书网，请<a href="javascript:;" onclick="reg_fn();return false;" class="reg_btn" style="color: #e63735;">注册</a>或<a href="javascript:; " onclick="load_fn();return false;"style="color: #e63735">登录</a>成为会员</div> 
+                  <div class="nav-login">欢迎光临趣书网，请
+                  <a href="javascript:;" onclick="reg_fn()" class="reg_btn" style="color: #e63735;">注册
+                  </a>或
+                  <a href="javascript:; " onclick="load_fn()" style="color: #e63735">登录</a>
+                   成为会员</div> 
                 </li>
                 <li class="nav-item"><a class="nav-item-bo">购物车<b class="car-num">0</b></a></li>
                 <li class="nav-item"><a class="nav-item-bo">我的订单</a></li>
@@ -77,8 +80,9 @@
     <div class="header-main">
         <div class="h-left">
             <div class="logo-h">
-                <img src="__HOME__/imgs/book.png" height="40px" style="position: absolute;top: 19px;left:3px;"/>
-                <img src="__HOME__/imgs/logomain.png" alt="">
+                <a href="{:U('index/index')}" class="clearfix"> 
+                    <img src="__HOME__/imgs/logomain.jpg" alt="">
+                </a>
             </div>
         </div>
         <div class="h-main">

@@ -24,6 +24,7 @@ define('APP_DEBUG',true); //有缓存机制
 define("WORKING_PATH",str_replace("\\","/",__DIR__));//工作目录
 
 define("UPLOAD_PATH","/Public/Upload/");//文件目录 
+
  
 
 // 定义应用目录

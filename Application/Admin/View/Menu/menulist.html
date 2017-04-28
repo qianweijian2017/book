@@ -9,10 +9,7 @@
 				</button>
 			</div> 
 			<div class="btn-group oper_bar"> 
-				<a href="javascript:;" class="btn btn-success btn-md" >
-					<i class="fa fa-pencil"></i>
-					<span>编辑</span>
-				</a> 
+				 
 				<a href="javascript:;" class="btn btn-primary btn-md" >
 					<i class="fa fa-pencil"></i>
 					<span>添加</span>
@@ -68,7 +65,7 @@
 			 </th>    
 		</tr>
 		 <volist name="menulist" id="menuitem">
-			<tr>
+			<tr data-id="{$menuitem.id}">
 			 	<td>
 			 		<input type="checkbox" class="sub_check" name="sub_check" value="{$menuitem.id}">
 			 	</td>
@@ -76,10 +73,10 @@
 			 		{$menuitem.id}
 			 	</td>
 			 	<td>
-			 		{$menuitem.sort}
+			 		<p data-key="sort">{$menuitem.sort}</p>
 			 	</td> 
 			 	 <td>
-			 		{$menuitem.type_name}
+			 		<p data-key="type_name">{$menuitem.type_name}</p>
 			 	</td> 
 			 	<td>
 			 		<if condition="$menuitem.status eq 1">

@@ -1,5 +1,6 @@
  <include file='include/header'/>
  <!-- 用户商品列表 -->
+ 
  <div class="ManagerBar"> 
 			<div class="btn-group oper_bar">
 				<button class="btn btn-danger btn-md" id="deleteItem">
@@ -8,10 +9,7 @@
 				</button>
 			</div> 
 			<div class="btn-group oper_bar"> 
-				<a href="javascript:;" class="btn btn-success btn-md" >
-					<i class="fa fa-pencil"></i>
-					<span>编辑</span>
-				</a> 
+				 
 				<a href="javascript:;" class="btn btn-primary btn-md" >
 					<i class="fa fa-pencil"></i>
 					<span>添加</span>
@@ -74,7 +72,7 @@
 			 		{$bookitem.book_name|mb_substr=###,0,25}
 			 	</td> 
 				<td>
-			 		{$bookitem.bk_menu}
+			 		{$bookitem.type_name}
 			 	</td> 
 			 	 <td>
 			 		{$bookitem.book_sale}

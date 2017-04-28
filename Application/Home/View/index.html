@@ -23,7 +23,8 @@
                     <!-- 左侧菜单开始 -->
                     <volist name="menulist" id="menuitem"> 
                         <li >
-                            <a href="{:U('book/booklist',array('type'=>$menuitem['id']))}"> {$menuitem.type_name}
+                            <a href="{:U('book/booklist',array('type'=>$menuitem['id']))}">
+                              {$menuitem.type_name}
                             </a>
                         </li>
                     </volist>
@@ -262,8 +263,6 @@
 </div>
 <!--//body结束-->
 
-
- 
 
 <include file='include/footer'/>
 

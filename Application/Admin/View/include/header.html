@@ -9,7 +9,11 @@
  	<!-- 获取控制器名,全局变量 --> 
 	 <script type="text/javascript">
 	 	var controllerName="{$Think.CONTROLLER_NAME}";
-	 	var postUrl="{:U('Ajax/delete')}"; 
+	 	var postDelUrl="{:U('Ajax/delete')}"; 
+	 	var postEditUrl="{:U('Ajax/edit')}"; 
+	 	// var postDelUrl="{:U('Ajax/delete')}"; 
+	 	// var postDelUrl="{:U('Ajax/delete')}"; 
+
 	 </script>
  </head>
  <body> 
@@ -67,7 +71,7 @@
 		 		</a>
 		 	</dd>
 		 	<dd>
-		 		<a href="{:U('book/bookdetail')}">
+		 		<a href="{:U('book/booklist')}">
 					<p><i class="fa fa-cart-plus"></i></p>
 		 			<span>首页商品</span>
 		 		</a>

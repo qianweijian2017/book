@@ -1,5 +1,7 @@
 <?php
 return array(
+    'APP_GROUP_LIST'        => 'Home,Admin',
+    'DEFAULT_GROUP'         => 'Home',  // 默认分组
 	'DB_TYPE'               =>  'mysql',     // 数据库类型
     'DB_HOST'               =>  'localhost', // 服务器地址
     'DB_NAME'               =>  'bookmanager',          // 数据库名

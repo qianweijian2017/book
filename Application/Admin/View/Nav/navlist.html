@@ -8,11 +8,7 @@
 					<span>删除</span>
 				</button>
 			</div> 
-			<div class="btn-group oper_bar"> 
-				<a href="javascript:;" class="btn btn-success btn-md" >
-					<i class="fa fa-pencil"></i>
-					<span>编辑</span>
-				</a> 
+			<div class="btn-group oper_bar">  
 				<a href="javascript:;" class="btn btn-primary btn-md" >
 					<i class="fa fa-pencil"></i>
 					<span>添加</span>
@@ -66,21 +62,20 @@
 			  <th>
 			 	是否隐藏
 			 </th>    
-			 		 
 		</tr>
 		 <volist name="navlist" id="navitem">
-			 <tr>
+			 <tr data-id="{$navitem.id}">
 			 	<td>
 			 		<input type="checkbox" class="sub_check" name="sub_check" value="{$navitem.id}">
 			 	</td>
 			 	<td>
-			 		{$navitem.id}
+			 		{$navitem.id} 
 			 	</td>
 			 	<td>
-			 		{$navitem.sort}
+			 		<p data-key="sort" >{$navitem.sort}</p>
 			 	</td>
 			 	<td>
-			 		{$navitem.type_name}
+			 		<p data-key="type_name">{$navitem.type_name}</p>
 			 	</td> 
 				<td>
 			 		<if condition="$navitem.status eq 1">
