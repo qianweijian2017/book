@@ -29,7 +29,7 @@ class BookController extends Controller
 
 		 $booklist=$book->alias("b")
 					->field("book_name,type_name,book_author,book_detail,
-							book_collect,book_prince,img_path,c.id")//查询所需要的字段
+							book_collect,book_prince,book_zk_prince,img_path,c.id")//查询所需要的字段
 					->where($where)	 
 					->join("__MENU__ c on b.book_type=c.id") 		//通过字段关联表
 					->order($sort)
