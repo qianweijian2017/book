@@ -882,7 +882,7 @@
     text-align: center;
 }
 .load .input{
-    width: 70%;
+    width: 85%;
     height: 30px;
 }
 .load .inp_pwd{
@@ -966,7 +966,7 @@
     text-align: center;
 }
 .reg .input{
-    width: 70%;
+    width: 85%;
     height: 30px;
 }
 .reg .inp_pwd{
@@ -1044,18 +1044,18 @@
 
 }
 .pwd{
-    top: 143px;
-    left: 26px;
+    top: 135px;
+    left: 28px;
 }
 .user{
     top: 72px;
-    left: 24px;
+    left: 25px;
 }
-.user  img{
-       height: 42px;
-    width: 41px;
+.user img{
+    height: 40px;
+    width: 42px;
 }
-.pwd  img{
+.pwd img{
     height: 32px;
     width: 37px;
 }
