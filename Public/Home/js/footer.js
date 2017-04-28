@@ -170,6 +170,37 @@
    //取消登陆  
 
 }());
-
+function  fn() {
+    $('.load').animate({
+        opacity:0,
+        top:"-500px"
+    });
+    $(".zhedangceng").css("display", "none");
+}
+//显示登录框
+function load_fn() {
+    $('.load').show().animate({
+        opacity:1,
+        top:"185px"
+    });
+    $(".zhedangceng").css("display", "block");
+};
+//隐藏注册框
+function  fn_reg() {
+    $('.reg').animate({
+        opacity:0,
+        top:"-500px"
+    });
+    $(".zhedangceng").css("display", "none");
+};
+//显示注册框
+function reg_fn () {
+    $('.reg').show().animate({
+        opacity:1,
+        top:"185px"
+    });
+    $(".zhedangceng").css("display", "block");
+}
+//
 
 
