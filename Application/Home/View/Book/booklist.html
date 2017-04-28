@@ -1,6 +1,18 @@
 <include file='include/header'/> 
 <link rel="stylesheet" type="text/css" href="__HOME__/css/booklist.css">
- 
+<nav id="navTip" class="navTip">
+	<div class="link">
+	 	<a href="{:U('index/index')}">
+	 		首页
+	 	</a>
+	 	<span>
+	 		/
+	 	</span>
+		<a href="" class="active">
+	 		分类列表
+	 	</a> 
+ 	</div>
+</nav>
 <div id="booklist" class="book_list">
 <!-- 左侧开始 -->
 	<aside class="sidebar"> 
@@ -10,14 +22,13 @@
 			</dt>
 			<!-- 第一行 -->
 			<dd>
-				<a href="{:U('Book/booklist',array('sort'=>'2'))}">
+				<a href="{:U('Book/booklist',array('sort'=>'2'))}" class="<php>menu_active(I('get.type'),0)</php>">
 					全部
 				</a>
 			</dd>
 			 <volist name="menulist" id="menuitem">
-				<dd>
-				 
-					<a href="{:U('Book/booklist',array('type'=>$menuitem['id'],'sort'=>'2'))}">	
+				<dd> 
+					<a href="{:U('Book/booklist',array('type'=>$menuitem['id'],'sort'=>'2'))}" class="<php>menu_active(I('get.type'),$menuitem['id'])</php>">	
 						{$menuitem['type_name']}
 					</a>
 				</dd>

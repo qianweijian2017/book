@@ -18,10 +18,32 @@
  		for(var i = 0 ; i < $sCheck.length ; i++ ){
  			aIds.push($sCheck[i].value);
  		}  
- 		$.post(postUrl,{"controllerName":controllerName,"aIds":aIds},function (data) {
+ 		$.post(postDelUrl,{"controllerName":controllerName,"aIds":aIds},function (data) {
  			 alert(data.info);
  			 location.reload();
  		})
  	}) 
 
+ 	//点击编辑
+ 	$("table.common_table tr td p").on("click",function () {
+ 		$(this).attr("contenteditable",true);
+ 	})
+ 	$("table.common_table tr td p").blur(function () { 
+ 		var key=$(this).data("key");//获取列名 
+ 		var value=$(this).text();//获取列值   
+ 		var id=$(this).parent().parent().data("id");//获取主键,因为要通过主键修改 
+ 		$.post(postEditUrl,{
+ 				"controllerName":controllerName,
+ 				"id":id,
+ 				"key":key,
+ 				"value":value
+ 		},function (data) { 
+ 			if(data){  
+ 				alert(data.info);
+ 				$(this).removeAttr("contenteditable");
+ 			}  
+ 			
+ 		}); 
+ 		
+ 	})
  }())

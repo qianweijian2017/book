@@ -151,7 +151,7 @@
 }
 
 .search-box .search-select .text {
-
+    text-align: center;
     font: 16px/36px "Microsoft Yahei";
     width: 107px;
     position: absolute;
@@ -406,10 +406,10 @@
     padding-left: 8px ;
 }
 .home-1 .home-1-right .gundong .gundong-c li a {
-    text-align: center;
-    padding-left: 8px;
+    text-align: center; 
     text-decoration: none;
     color: #646464;
+    font-size: 13px;
     font-family: "Microsoft Yahei";
 } 
 .home-1 .home-1-right .gundong .gundong-c .c .yushoname{
@@ -724,7 +724,7 @@
 
 .c {
     margin: auto;
-    margin-top: 10px;
+    margin-top: 12px;
     float: left;
     height: 130px;
 }
@@ -739,7 +739,9 @@
     text-justify: distribute;
     line-height: 20px;
 }
-
+.yushouname:hover{
+    color: #D81E06;
+}
 #gundong-c a:hover {
     color: #d81e06;
 }

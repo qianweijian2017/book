@@ -1,3 +1,6 @@
+
+/*列表*/
+
 #booklist{
 	height: 500px;
 	margin-top: 30px; 
@@ -20,6 +23,13 @@
 }
 .book_list .sidebar dl a{
 	color: #000;
+}
+.book_list .sidebar dl a.active{
+	background-color: #ED4259;
+	color: #F9F9F9;
+}
+.book_list .sidebar dl a.active:hover{
+	color: #F9F9F9;
 }
 .book_list .sidebar >dl >dt{
 	width: 100%; 
@@ -58,11 +68,14 @@
 .book_list  .listshow{
 	width: 948px;
 	float: left; 
+	margin-left: 15px;
 }
 
 /*分类选项box*/
 .book_list  .listshow .list-sort-tilte{
 	padding:10px 0 ;
+	font-size: 14px;
+
 	background-color: #F7F6F2;
 }
 .book_list  .listshow .list-sort-tilte ul{

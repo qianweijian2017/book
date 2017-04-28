@@ -23,7 +23,8 @@
                     <!-- 左侧菜单开始 -->
                     <volist name="menulist" id="menuitem"> 
                         <li >
-                            <a href="{:U('book/booklist')}">{$menuitem.type_name}</a>
+                            <a href="{:U('book/booklist',array('type'=>$menuitem['id']))}"> {$menuitem.type_name}
+                            </a>
                         </li>
                     </volist>
                     <!-- 左侧菜单end -->
@@ -99,15 +100,15 @@
                                 <li><a href="">100元无门槛现金券限量领</a></li>
                             </ul>
                         </div>
-                        <volist name="hotlist" id="hotitem">
+                        <volist name="hotlist" id="hotitem" offset='0' length="2" >
                             <div class="c">
-                                <a href="">
+                                <a href="{:U('book/bookdetail',array('type'=>$hotitem['id']))}">
                                     <img src="/tushuguanli{$hotitem['img_path']}">
                                 </a>
-                                <a href="" style="text-decoration: none;color: #000;" class="yushoname">
-                                    《
-                                    <span class="yushouname">{$hotitem['book_name']}</span>
-                                    》
+                                <a href="{:U('book/bookdetail',array('type'=>$hotitem['id']))}" style="text-decoration: none;color: #000;" class="yushoname">
+                                    
+                                    <span class="yushouname">《{$hotitem['book_name']}</span>
+                                    
                                 </a>
                                 <span class="writer">
                                     {$hotitem['book_author']}
@@ -145,12 +146,12 @@
         <volist name="hotlist" id="hotitem">
             <div class="super-item right-margin">
             <div class="book-pic">
-                <a href=""> 
-                    <img src="/tushuguanli{$hotitem.img_path}" height="384" width="450"/></a>
+                <a href="{:U('book/bookdetail',array('type'=>$hotitem['id']))}"> 
+                    <img src="/tushuguanli{$hotitem.img_path}" /></a>
             </div>
             <div class="super-item-recent">
                 <!-- 书名 -->
-                <a href="">{$hotitem.book_name} </a>  
+                <a href="{:U('book/bookdetail',array('type'=>$hotitem['id']))}">{$hotitem.book_name} </a>  
             </div>
             <div class="super-item-per">
                 <!-- 书作者 -->
@@ -188,11 +189,11 @@
         <volist name="newlist" id="newitem">
             <div class="super-item right-margin">
                 <div class="book-pic">
-                    <a href=""> 
-                        <img src="/tushuguanli{$newitem.img_path}" height="384" width="450"/></a>
+                    <a href="{:U('book/bookdetail',array('type'=>$newitem['id']))}"> 
+                        <img src="/tushuguanli{$newitem.img_path}" /></a>
                 </div>
                 <div class="super-item-recent">
-                    <a href="">{$newitem.book_name}</a>
+                    <a href="{:U('book/bookdetail',array('type'=>$newitem['id']))}">{$newitem.book_name}</a>
                 </div>
                 <div class="super-item-per">
                     <p>{$newitem.book_author}</p>
@@ -225,11 +226,11 @@
          <volist name="pulllist" id="pullitem">
             <div class="super-item right-margin">
                 <div class="book-pic">
-                    <a href=""> 
-                        <img src="/tushuguanli{$pullitem.img_path}" height="384" width="450"/></a>
+                    <a href="{:U('book/bookdetail',array('type'=>$pullitem['id']))}"> 
+                        <img src="/tushuguanli{$pullitem.img_path}"/></a>
                 </div>
                 <div class="super-item-recent">
-                    <a href="">{$pullitem.book_name}</a>
+                    <a href="{:U('book/bookdetail',array('type'=>$pullitem['id']))}">{$pullitem.book_name}</a>
                 </div>
                 <div class="super-item-per">
                     <p>{$pullitem.book_author}</p>
@@ -249,7 +250,7 @@
             <img src="__HOME__/imgs/book_nav.png" height="30" width="50"/>
         </li>
        <volist name="menulist" id="menuitem">  
-            <li><a href="">{$menuitem.type_name}</a></li>
+            <li><a href="{:U('book/booklist',array('type'=>$menuitem['id']))}">{$menuitem.type_name}</a></li>
         </volist>
         <li style="text-align: center;background: #ff2832;color: #fff;line-height: 40px;height:40px">
             <span href="javascript:" style="color: #000;text-align: center;cursor: pointer" class="roket">

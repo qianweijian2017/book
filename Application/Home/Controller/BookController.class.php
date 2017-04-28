@@ -45,8 +45,15 @@ class BookController extends Controller
 	 * @return [] [description]
 	 */
 	public function bookdetail()
-	{
-		$this->display();
+	{ 
+		if(I('get.type')){
+			$model=M('book');
+			$bookdetail=$model->find(I('get.type')); 
+			$this->assign("bookdetail",$bookdetail);
+			$this->display();
+		}
+		
+		
 	}
  	/**
  	 * 根据条件获取分类 

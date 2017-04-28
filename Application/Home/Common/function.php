@@ -19,3 +19,11 @@ function select_active($this_select,$current_type)
 	 	return;
 	} 
 }
+function menu_active($this_select,$current_type)
+{
+	if($this_select==$current_type){
+ 		echo "active";
+	}else{
+	 	return;
+	} 
+}

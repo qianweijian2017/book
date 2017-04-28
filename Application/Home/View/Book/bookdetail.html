@@ -1,32 +1,45 @@
 <include file='include/header'/>
+<nav id="navTip" class="navTip">
+    <div class="link">
+        <a href="{:U('index/index')}">
+            首页
+        </a>
+        <span>
+            /
+        </span>
+        <a href="" class="active">
+            商品详情
+        </a> 
+    </div>
+</nav>
 <div class="book-detail">
 
     <div class="book_info">
-        <div class="share-box">
-            <img src="__HOME__/imgs/dsend.png" height="70px" width="70px"/>
-        </div>
-        <div class="b_pic">
-
-            <img src="__HOME__/imgs/dpro.jpg" height="240" width="180"/></div>
-        <div class="b_info">
-            <div class="b_name">
-                <h2>超级浮空城</h2>
+        
+            <div class="share-box">
+                <img src="__HOME__/imgs/dsend.png" height="70px" width="70px"/>
             </div>
-            <div class="b_wri">
-                作者： <a href="">格雷厄姆·格林 著 柯</a>
+            <div class="b_pic"> 
+                <img src="/tushuguanli{$bookdetail['img_path']}" height="240" width="180"/></div>
+            <div class="b_info">
+                <div class="b_name">
+                    <h2>超级浮空城</h2>
+                </div>
+                <div class="b_wri">
+                    作者：{$bookdetail.book_author} 
+                </div>
+                <span class="pub">出版社 : <c>{$bookdetail.book_publish} </c></span>
+                <span class="b_date">出版时间 : <c>{$bookdetail.book_publish_time|date='Y-m-d',###}  </c></span>
+                <span class="b_page">原价 : <del>￥{$bookdetail.book_prince} </del></span>
+                <span class="b_price">现价 : <c style="color:red;font-weight: 600;">￥{$bookdetail.book_zk_prince} </c></span>
+                <span class="b_isbn">ISBN : <c>{$bookdetail.book_isbn} </c></span>
+                <span class="b_count">版 次 : <c>1</c></span>
+
+                <span id="btn_incart" data-id="{$bookdetail.id}" style="background:#d81e06;width: 200px" class="b_btn">加入购物车</span>
+                <span  id="btn_collect" data-id="{$bookdetail.id}" style="background:#3f89ec;width: 200px;" class="b_btn">加入收藏</span>
+
             </div>
-            <span class="pub">出版社 : <c>江苏文艺出版社</c></span>
-            <span class="b_date">出版时间 : <c>2017年04月 </c></span>
-            <span class="b_page">页数 : <c>1024</c></span>
-            <span class="b_price">价格 : <c>¥41.80</c></span>
-            <span class="b_isbn">ISBN : <c>756341455x</c></span>
-            <span class="b_count">版 次 : <c>1</c></span>
-
-            <span style="background:#d81e06;width: 200px" class="b_btn">加入购物车</span>
-            <span style="background:#3f89ec;width: 200px;" class="b_btn">加入收藏</span>
-
-        </div>
-
+         
     </div>
     <div class="book_detail">
         <div class="detail-main">
@@ -115,7 +128,7 @@
 </div>
 
 <include file='include/footer'/>
-
+<script src="__HOME__/js/bookdetail.js"></script>
 <script>
     $('.main-title').children().on('click', function () {
         $(this).addClass('cur').siblings().removeClass('cur');

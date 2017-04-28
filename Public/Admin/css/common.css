@@ -153,9 +153,9 @@ table.common_table{
 
 } 
 table.common_table tr th{
-height: 30px;
-line-height: 30px;
-text-align: center;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
 }
 table.common_table tr th:first-child{
 	text-align: left;
@@ -174,7 +174,7 @@ table.common_table tr td:first-child input[type='checkbox']{
 }
 table.common_table tr:hover{
 	background-color: #C9C9C9;
-	cursor: pointer;
+	 
 }
 table.common_table tr:first-child:hover{
 	background-color: #fff;
@@ -182,6 +182,15 @@ table.common_table tr:first-child:hover{
 table.common_table tr td.book_title{
 	width: 200px;
 }
+
+ 
+
+
+
+
+
+
+
 
 
 /*分页*/
