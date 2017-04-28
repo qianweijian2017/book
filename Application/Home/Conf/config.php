@@ -4,7 +4,8 @@ return array(
 	 'TMPL_PARSE_STRING'=>array(
 		'__ADMIN__'=>__ROOT__."/Public/Admin",
 		'__HOME__'=>__ROOT__."/Public/Home",
-		'__LIB__'=>__ROOT__."/Public/Lib"
+		'__LIB__'=>__ROOT__."/Public/Lib" ,
+		'__WORKING_PATH__'=>__ROOT__
 	),
 	
 );

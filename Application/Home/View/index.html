@@ -103,7 +103,7 @@
                         <volist name="hotlist" id="hotitem" offset='0' length="2" >
                             <div class="c">
                                 <a href="{:U('book/bookdetail',array('type'=>$hotitem['id']))}">
-                                    <img src="/tushuguanli{$hotitem['img_path']}">
+                                    <img src="__WORKING_PATH__/{$hotitem['img_path']}">
                                 </a>
                                 <a href="{:U('book/bookdetail',array('type'=>$hotitem['id']))}" style="text-decoration: none;color: #000;" class="yushoname">
                                     
@@ -147,7 +147,7 @@
             <div class="super-item right-margin">
             <div class="book-pic">
                 <a href="{:U('book/bookdetail',array('type'=>$hotitem['id']))}"> 
-                    <img src="/tushuguanli{$hotitem.img_path}" /></a>
+                    <img src="__WORKING_PATH__/{$hotitem.img_path}" /></a>
             </div>
             <div class="super-item-recent">
                 <!-- 书名 -->
@@ -190,7 +190,7 @@
             <div class="super-item right-margin">
                 <div class="book-pic">
                     <a href="{:U('book/bookdetail',array('type'=>$newitem['id']))}"> 
-                        <img src="/tushuguanli{$newitem.img_path}" /></a>
+                        <img src="__WORKING_PATH__/{$newitem.img_path}" /></a>
                 </div>
                 <div class="super-item-recent">
                     <a href="{:U('book/bookdetail',array('type'=>$newitem['id']))}">{$newitem.book_name}</a>
@@ -227,7 +227,7 @@
             <div class="super-item right-margin">
                 <div class="book-pic">
                     <a href="{:U('book/bookdetail',array('type'=>$pullitem['id']))}"> 
-                        <img src="/tushuguanli{$pullitem.img_path}"/></a>
+                        <img src="__WORKING_PATH__/{$pullitem.img_path}"/></a>
                 </div>
                 <div class="super-item-recent">
                     <a href="{:U('book/bookdetail',array('type'=>$pullitem['id']))}">{$pullitem.book_name}</a>
