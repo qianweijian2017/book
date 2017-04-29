@@ -1,0 +1,114 @@
+#myorder{
+	margin-top: 50px;
+	width: 1100px;
+	margin: 0 auto;
+}
+.myorder a{
+	color: #000;
+}
+.myorder a:hover{
+	color: #F22429;
+}
+.myorder aside.order-left{
+	width: 150px;
+	text-align: center;
+	float: left;
+
+}
+.myorder aside.order-left h4{
+	color: #F22429;
+	line-height: 40px; 
+}
+.myorder aside.order-left ul li{
+	font-size: 12px;
+
+}
+.myorder aside.order-left ul li a{
+	padding: 5px 0;
+	display: block;
+}
+
+
+.myorder  .order-right{
+	width: 800px;
+	float: left;
+	margin-left: 10px;
+}
+.myorder  .order-right .order-header p{
+	float: left;
+	height: 40px;
+}
+.myorder  .order-right .order-header p a{
+	padding:10px 20px;
+}
+.myorder  .order-right .order-header p a.active{
+	color: #F22429;
+	border-bottom:2px solid #F22429;
+}
+.myorder  .order-right .order-header form{
+	float: right;
+	height: 40px;
+	margin-left: 20px;
+}
+.myorder  .order-right .order-header form input{
+	border: 1px solid #ccc;
+	padding: 3px;
+	padding-left: 5px;
+	width: 300px;
+	height: 80%;
+}
+.myorder  .order-right .order-header form button{
+	width: 150px; 
+	height: 80%;
+	background-color: #f00;
+	color: #fff;
+}
+.myorder  .order-right .order-header table{
+	clear: both;
+}
+.myorder  .order-right .order-list{
+	clear: both;
+	margin-top: 30px;
+}
+.myorder  .order-right .order-list table.order-col{
+	width: 100%;
+}
+.myorder  .order-right .order-list table.order-col .order-time{
+	height: 60px; 
+}
+.myorder  .order-right .order-list table .tbody{
+ 
+	border: 1px solid #000;
+}
+.myorder  .order-right .order-list table.order-col .order-item-title{ 
+	height: 60px; 
+	margin-bottom: 50px;
+	 
+}
+
+.myorder  .order-right table tr td {
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+}
+.myorder  .order-right table tr td:first-child{
+	width: 400px;
+}
+.myorder  .order-right  table tr td.time{
+	text-align: left;
+}
+.myorder  .order-right table tr td .order-img{
+	float: left;
+}
+.myorder  .order-right  table tr td .order-img img{
+	width: 80px;
+	height: 85px; 
+}
+.myorder  .order-right table tr td .detail{ 
+	float: left;
+	text-align: left;
+	margin-left: 10px;
+	width: 300px;
+	font-size: 12px;
+
+}
