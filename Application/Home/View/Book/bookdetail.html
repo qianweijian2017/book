@@ -23,7 +23,7 @@
                 <img src="__WORKING_PATH__/{$bookdetail['img_path']}" height="240" width="180"/></div>
             <div class="b_info">
                 <div class="b_name">
-                    <h2>超级浮空城</h2>
+                    <h2>{$bookdetail.book_name} </h2>
                 </div>
                 <div class="b_wri">
                     作者：{$bookdetail.book_author} 
@@ -133,7 +133,16 @@
     $('.main-title').children().on('click', function () {
         $(this).addClass('cur').siblings().removeClass('cur');
         $('.main-content').children().eq($(this).index()).addClass('b-n').removeClass('n-b').siblings().addClass('n-b').removeClass('b-n')
-    })
+    }) 
+    $("#btn_incart").click(function () {
+        var id=$(this).data("id"); 
+        $.post(IncartUrl,{
+                    "controllerName":controllerName,
+                    "id":id
+        },function (data) {
+           alert(data.info);
+        })
+    }); 
 </script>
 <style>
     .b-n {
