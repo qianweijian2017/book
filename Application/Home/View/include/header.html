@@ -60,10 +60,16 @@
             <ul class="nav-list">
                 <li class=" login" style="float: left">
                   <div class="nav-login">欢迎光临趣书网，请
-                  <a href="javascript:;" onclick="reg_fn()" class="reg_btn" style="color: #e63735;">注册
-                  </a>或
-                  <a href="javascript:; " onclick="load_fn()" style="color: #e63735">登录</a>
-                   成为会员</div> 
+                    <php>if(!session("auth")){</php>
+                      <a href="javascript:;" onclick="reg_fn()" class="reg_btn" style="color: #e63735;">注册
+                      </a>或
+                      <a href="javascript:; " onclick="load_fn()"   style="color: #e63735">登录</a>
+                      成为会员
+                     <php>}else{</php> 
+                         <a href="javascript:;" id="exit" style="color: #e63735">退出</a>
+                    <php>}</php>
+                   
+                   </div> 
                 </li>
                 <li class="nav-item"><a class="nav-item-bo">购物车<b class="car-num">0</b></a></li>
                 <li class="nav-item"><a class="nav-item-bo">我的订单</a></li>
@@ -101,7 +107,7 @@
 
                     <div class="search-icon">
                         <div class="search-icon-right">
-                            <a href="">我的订单</a>
+                            <a href="{:U('user/myorder')}">我的订单</a>
                         </div>
                         <div class="search-icon-left">
 

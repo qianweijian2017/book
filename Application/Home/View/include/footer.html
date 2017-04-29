@@ -74,19 +74,21 @@
 
 
 
-
+ <!--load_box-->
  <div class="load">
     <h3 class="login-title">快速登录</h3>
-    <h2 class="x"><a href="#" onclick="fn();return false;">×</a></h2>
-    <form action="" method="post">
+    <h2 class="x"><a href=" " onclick="fn();return false;">×</a></h2>
+    <div>
         <div class="inp">
             <div class="inp_box">
-                <label for="" class="_label"></label> <input type="text" value="" class="input inp_user" placeholder="账号/手机号">
-                <p class="tips"></p>
+                <label for="" class="_label"></label> 
+                <input type="text"   id="LUserName" class="input inp_user" placeholder="账号/手机号">
+                <p class="tips"></p >
             </div>
             <div class="inp_box">
-                <label for="" class="_label"></label> <input type="password" value="" class="input inp_pwd" placeholder="密码">
-                <p class="tips"></p>
+                <label for="" class="_label"></label>
+                 <input type="password" id="LUserPwd"   class="input inp_pwd" placeholder="密码">
+                <p class="tips"></p >
             </div>
         </div>
         <div class="inp-icon user">
@@ -95,26 +97,27 @@
         <div class="inp-icon pwd">
             <img src="__HOME__/imgs/pwd.png" />
         </div>
-        <input type="submit" value="登录" class="btn">
+        <input type="submit" id="doLogin" value="登录" class="btn">
 
         <input type="button" value="注册" class="btn reg_" onclick="fn();reg_fn()">
-    </form> 
+    </div> 
 
 </div>
-
 <!--reg_box-->
 <div class="reg">
     <h3 class="reg-title">快速注册</h3>
     <h2 class="x"><a href="#" onclick="fn_reg();return false;">×</a></h2>
-    <form action="" method="post">
+    <div>
         <div class="inp">
             <div class="inp_box">
-                <label for="" class="_label"> </label><input type="text" value="" class="input inp_user" placeholder="账号/手机号">
+                <label for="" class="_label"> </label>
+                <input type="text"  id="RUserName" class="input inp_user" placeholder="账号/手机号">
                 <p class="tips"></p>
             </div>
             <div class="inp_box">
-                <label for="" class="_label"></label><input type="password" value="" class="input inp_pwd" placeholder="密码">
-                <p class="tips"></p>
+                <label for="" class="_label"></label>
+                <input type="password"  id="RUserPwd" class="input inp_pwd" placeholder="密码">
+                <p class="tips"></p >
             </div>
         </div>
         <div class="inp-icon user">
@@ -124,18 +127,59 @@
             <img src="__HOME__/imgs/pwd.png" />
         </div>
 
-        <input type="button" value="确认注册" class="btn">
-    </form>
+        <input type="button" id="doReg"  value="确认注册" class="btn">
+    </div>
 
 
 </div>
 <div class="zhedangceng">
 
 </div>
-
-<!--//body结束-->
  <script type="text/javascript" src="__LIB__/jquery-1.9.1.min.js"></script>
  <script type="text/javascript" src="__HOME__/js/footer.js"></script>
- 
+ <script type="text/javascript">
+     $("#doLogin").click(function() { 
+         var user_name=$("#LUserName").val();
+         var user_pwd=$("#LUserPwd").val();
+         $.post("{:U('Ajax/doLogin')}",
+            {
+                "user_name":user_name,
+                "user_pwd":user_pwd 
+            },function (data) { 
+                if(data.success){
+                    alert(data.info);
+                    location.reload();
+                }else{
+                    alert(data.info);
+                }
+            })
+     });
+    $("#doReg").click(function() {
+         var user_name=$("#RUserName").val();
+         var user_pwd=$("#RUserPwd").val();
+         $.post("{:U('Ajax/doReg')}",
+            {
+                "user_name":user_name,
+                "user_pwd":user_pwd 
+            },function (data) {
+                 document.write(data);
+                if(data.success){
+                    alert(data.info);
+                    location.reload();
+                }else{
+                    alert(data.info);
+                }
+            })
+     });
+    $("#exit").click(function () {
+       $.post("{:U('Ajax/doExit')}",{},function (data) {
+           
+            if(data.success){
+                alert("退出成功!");
+                location.reload();
+            }
+       })
+    });
+ </script>
  </body>
  </html>
