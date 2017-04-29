@@ -73,17 +73,39 @@ class AjaxController extends Controller
 	public function incart()
 	{
 		if(!session("auth")){
-			$this->ajaxReturn("请先登陆");
+			$this->ajaxReturn(
+					array("info" =>"请先登陆" , )
+				);
 			exit;
 		}
+		 $user=session("auth");
 		 if(IS_POST){
 		 	$controller=I("post.controllerName");
-		 	$id=I('post.id');
-		 	$model=D($controller);//实例化书模型
-		 	$cart=D('cart'); //实例化购物车模型
-		 	if($book=$model->find($id)){
-		 		
-		 	}
+		 	$id=I('post.id'); 
+		 	$cart=D('cart'); //实例化购物车模型 
+		 	$count=$cart->where("user_id={$user['id']} and book_id=$id")->find();
+		 	if($count){    
+		 		$data["amount"]=strval($count["amount"])+1;
+	 			$cart->where("user_id={$user['id']} and book_id=$id")->save($data);
+ 		 		$this->ajaxReturn(
+	 		 		array(
+	 		 			"info"=>"加入购物车成功"
+	 		 			)
+ 		 		);
+ 		 		exit; 
+		 	}else{
+		 		$cart->user_id=$user['id'];
+		 		$cart->book_id=$id;
+		 		$cart->amount=1;
+		 		if($cart->add()){
+	 		 		$this->ajaxReturn(
+		 		 		array(
+		 		 			"info"=>"加入购物车成功"
+		 		 			)
+	 		 		);
+	 		 		exit;
+	 			}
+		 	} 
 
 		 }
 	}
