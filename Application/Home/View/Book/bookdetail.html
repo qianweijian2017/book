@@ -20,7 +20,8 @@
                 <img src="__HOME__/imgs/dsend.png" height="70px" width="70px"/>
             </div>
             <div class="b_pic"> 
-                <img src="__WORKING_PATH__/{$bookdetail['img_path']}" height="240" width="180"/></div>
+                <img src="__WORKING_PATH__/{$bookdetail['img_path']}" height="240" width="180"/>
+                </div>
             <div class="b_info">
                 <div class="b_name">
                     <h2>{$bookdetail.book_name} </h2>
@@ -50,59 +51,20 @@
             <div class="main-content">
                 <div class="info-content">
                     <p class="text">
-                        　
-                        　森罗万象，皆为灰烬，流刃若火！
-                        <br>　　穿越到海贼世界，大海贼时代十一年的罗亚，得到了一个能够无限强化，抽取各种技能的剑魂系统。
-                        <br>　　流刃若火，镜花水月，月牙天冲，千本樱……
-                        <br>　　“我这一刀下去，你可能会被烧死。”罗亚看着眼前的赤犬，很认真的说道。
-                        <br>　　………………………………
-                        <br>　　风盟2群：580391329
-                        <br>　　实际上这个剑气叠加只是修炼方式而已，真正战斗的时候可没有时间去进行剑气叠加。</br>
-                        <br>　　我的设定是，假设挥一剑，剑气是一米，那么进行了剑气叠加的修炼之后，如果主角能做到两剑叠加了，那么再挥一剑时，剑气就是两米。</br>
-                        <br>　　两者是对等关系，剑气叠加只是修炼方式，并不是实战，一旦练成之后就等于是一个增强剑气威力的被动技能，释放剑气的时候，是不需要再刻意去叠加的。</br>
-                        <br>　　这个是第一点，另外第二点，关于本书的等级制度。</br>
-                        <br>　　海贼王世界没有很明确的分级，不像火影，所以等级制度是比较混乱的。</br>
-                        <br>　　海军本部上校实力，本部少将实力，支部中将实力，本部中将实力，顶尖中将实力，准大将实力（多弗朗明哥、四将星、三灾、不死鸟马尔科），海军大将，四皇……</br>
-                        <br>　　上校之下不划分实力，因为太凌乱无法划分，所以起点就是海军上校。</br>
-                        <br>　　桃兔、茶豚等预备大将，因为原著没有放出来，所以暂时不进行什么设定。</br>
+                        {$bookdetail.book_detail|trim=###|htmlspecialchars_decode=###|mb_substr=###,0,300}　 
+                         {$bookdetail.book_detail|htmlspecialchars_decode=###|trim=###|mb_substr=###,100}
                     </p>
                 </div>
                 <div class="relation-content n-b">
                     <p class="text">
-                        <br>　　实际上这个剑气叠加只是修炼方式而已，真正战斗的时候可没有时间去进行剑气叠加。</br>
-                        <br>　　我的设定是，假设挥一剑，剑气是一米，那么进行了剑气叠加的修炼之后，如果主角能做到两剑叠加了，那么再挥一剑时，剑气就是两米。</br>
-                        <br>　　两者是对等关系，剑气叠加只是修炼方式，并不是实战，一旦练成之后就等于是一个增强剑气威力的被动技能，释放剑气的时候，是不需要再刻意去叠加的。</br>
-                        <br>　　这个是第一点，另外第二点，关于本书的等级制度。</br>
-                        <br>　　海贼王世界没有很明确的分级，不像火影，所以等级制度是比较混乱的。</br>
-                        <br>　　海军本部上校实力，本部少将实力，支部中将实力，本部中将实力，顶尖中将实力，准大将实力（多弗朗明哥、四将星、三灾、不死鸟马尔科），海军大将，四皇……</br>
-                        <br>　　上校之下不划分实力，因为太凌乱无法划分，所以起点就是海军上校。</br>
-                        <br>　　桃兔、茶豚等预备大将，因为原著没有放出来，所以暂时不进行什么设定。</br>
-                        <br>　　其中准大将往上的等级，都是争议非常大的，但是小风觉得这些人的实力应该差不多近似，就算有差距也不会特别大，所以都放到一个等级里面去。</br>
-                        <br>　　另外海军大将和四皇之间，除了巅峰时期白胡子之外，其他四皇应该没有碾压海军大将的实力，打起来多半是五五开到七三开之间，四皇赢面比较大。</br>
-                </div>
-
-
+                        {$bookdetail.book_detail|htmlspecialchars_decode=###|trim=###|mb_substr=###,100}
+                         {$bookdetail.book_detail|trim=###|htmlspecialchars_decode=###|mb_substr=###,0,300}
+                    </p>
+                </div> 
             </div>
             <div class="b-right">
-                <div class="guess-like ">
-                    <div class="g-title">
-                        <span>
-                            猜你喜欢
-                       </span>
-                        <div class="change-icon"  style="cursor: pointer">
-                            <img src="__HOME__/imgs/dchange.png" height="22px" width="22px"/>
-                        </div>
-                    </div>
-
-                    <div class="g-pic">
-                        <img  style="cursor: pointer" src="__HOME__/imgs/dpro.jpg" height="240" width="180"/>
-                    </div>
-                    <span class="g-name mesg"><a>《</a> 超级浮空城<a> 》</a></span>
-                    <span class="g-wri mesg"> 格雷厄姆·格林 著 柯</span>
-                    <span class="g-short mesg">
-                      一场绝密级的试验爆炸让萧铭来到一个类似古代的平行世界。在这个满是恶意的地方，他身为最不受宠的皇
-                    </span>
-
+                <div class="guess-like " id="guess-like">
+                   
                 </div>
                 <div class="relate-book ">
                     <div class="g-title">
@@ -127,13 +89,14 @@
 
 </div>
 
-<include file='include/footer'/>
-<script src="__HOME__/js/bookdetail.js"></script>
+<include file='include/footer'/> 
 <script>
     $('.main-title').children().on('click', function () {
         $(this).addClass('cur').siblings().removeClass('cur');
         $('.main-content').children().eq($(this).index()).addClass('b-n').removeClass('n-b').siblings().addClass('n-b').removeClass('b-n')
     }) 
+
+    //加入购物车
     $("#btn_incart").click(function () {
         var id=$(this).data("id"); 
         $.post(IncartUrl,{
@@ -143,6 +106,33 @@
            alert(data.info);
         })
     }); 
+
+    //加入收藏
+    $("#btn_collect").click(function () {
+        var id=$(this).data("id"); 
+        $.post(IncollectUrl,{
+                    "controllerName":controllerName,
+                    "id":id
+        },function (data) {
+           alert(data.info);
+        })
+    })
+ 
+    //猜你喜欢
+    guess(); 
+    function bindClick() {
+        $("#refresh_new").click(function () { 
+             guess();
+        })
+    } 
+    function guess() {
+         $.post("{:U('Ajax/guessLike')}",{},function (data) {  
+            $("#guess-like").html(data.html);
+            bindClick();
+        });
+    } 
+    
+   
 </script>
 <style>
     .b-n {
@@ -205,7 +195,7 @@
     }
 
     .book-detail .book_info .b_wri {
-       padding: 7px 10px 51px 10px;
+       padding: 7px 10px 8px 10px;
         width: 50%;
         float: left;
     }
@@ -326,7 +316,9 @@
         height: 240px;
         overflow: hidden;
     }
-   
+    .g-name a{
+        color: #333;
+    }
     .mesg {
         margin:1px auto;
         text-align: center;

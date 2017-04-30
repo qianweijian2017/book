@@ -23,7 +23,7 @@ class BookController extends Controller
 		 if(I('sort')!="2") {
 		 	$sort=self::getSort(I('sort'));
 		 } 
-     	 $count=$book->where($where)->count(); //where 为条件,可作分类分页  
+     	 $count=$book->alias("b")->join("__MENU__ c on b.book_type=c.id")->where($where)->count(); //where 为条件,可作分类分页  
      	 $page=new Page($count,8);	//count总页数,limit是显示的行数   
   	     $sPages=$page->show();  
 
@@ -52,8 +52,7 @@ class BookController extends Controller
 			$this->assign("bookdetail",$bookdetail);
 			$this->display();
 		}
-		
-		
+		 
 	}
  	/**
  	 * 根据条件获取分类 

@@ -199,12 +199,12 @@ class AjaxController extends Controller
             </div>
             <span class="g-name mesg">
             <a href="'.__ROOT__.'/Home/book/bookdetail/type/'.$bookid.'">
-             	 '.$book['book_name'].'
+             	 '.mb_substr($book['book_name'],0,15).'...
             </a>
             </span>
-            <span class="g-wri mesg"> 格雷厄姆·格林 著 柯</span>
+            <span class="g-wri mesg">  '.$book['book_author'].'</span>
             <span class="g-short mesg">
-              一场绝密级的试验爆炸让萧铭来到一个类似古代的平行世界。在这个满是恶意的地方，他身为最不受宠的皇
+             '.mb_substr(htmlspecialchars_decode($book['book_detail']),0,60).'...
             </span>';
 
          $this->ajaxReturn(
