@@ -6,6 +6,10 @@ use Think\Controller;
 */
 class AjaxController extends Controller
 {
+	/**
+	 * 登陆
+	 * @return [type] [description]
+	 */
 	public  function doLogin()
 	{
 		if(IS_POST){  
@@ -33,6 +37,10 @@ class AjaxController extends Controller
 	 	}
 		  
 	}
+	/**
+	 * 注册 
+	 * @return [type] [description]
+	 */
 	public function doReg()
 	{
 		if(IS_POST){  
@@ -63,6 +71,10 @@ class AjaxController extends Controller
 		 	}
 	 	}
 	}
+	/**
+	 * 退出登陆
+	 * @return [type] [description]
+	 */
 	public function doExit(){ 
 		 session("auth",null);
 		 $this->ajaxReturn(
