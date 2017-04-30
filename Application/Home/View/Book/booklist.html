@@ -63,8 +63,10 @@
  		</div>
 		<div class="listshow-list">  
 	 		<volist name="booklist" id="bookitem">
+
 				<!-- 单个选项开始 -->
 				<div class="listshow-item">
+
 					<div class="prince">
 						<span>
 							<em>￥</em>{$bookitem.book_zk_prince|trim=###}
@@ -75,13 +77,14 @@
 						</i> 
 					</div>
 				 	<div class="list-item-img">
-				 		<a href="">
-				 			<img src="__WORKING_PATH__/{$bookitem.img_path}">
+
+				 		<a href="{:U('Book/bookdetail',array('type'=>$bookitem[id]))}">
+				 			<img src="__WORKING_PATH__/{$bookitem.img_path}"> 
 				 		</a>
 				 	</div>
 				 	 <dl>
 				 	 	<dt class="list-item-title" title="{$bookitem.book_name}">
-				 	 		<a href="javascript:;">{$bookitem.book_name}</a>
+				 	 		<a href="{:U('Book/bookdetail',array('type'=>$bookitem[id]))}">{$bookitem.book_name}</a>
 				 	 	</dt>
 				 	 	<dd>
 				 	 		<span>
@@ -100,7 +103,7 @@
 				 	 	</dd>
 				 	 	<dd>
 				 	 		 <p>
-				 	 			 {$bookitem.book_detail}
+				 	 			 {$bookitem.book_detail|htmlspecialchars_decode=###}
 				 	 		 </p>
 				 	 	</dd>
 				 	 	<dd>

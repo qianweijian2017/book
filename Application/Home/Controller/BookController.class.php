@@ -15,7 +15,7 @@ class BookController extends Controller
 	{
 		 $book=M("book"); //创建书本对象
 		 $menu=M("menu");//创建菜单对象
-		 $menulist= $menu->field("type_name,id")->select(); 
+		 $menulist= $menu->select(); 
 		 if(I('type')){
 		 	 $where='book_type='.I('type');//是否有分类 
 		 } 
@@ -29,12 +29,13 @@ class BookController extends Controller
 
 		 $booklist=$book->alias("b")
 					->field("book_name,type_name,book_author,book_detail,
-							book_collect,book_prince,book_zk_prince,img_path,c.id")//查询所需要的字段
+							book_collect,book_prince,book_zk_prince,img_path,b.id")//查询所需要的字段
 					->where($where)	 
 					->join("__MENU__ c on b.book_type=c.id") 		//通过字段关联表
 					->order($sort)
 					->limit($page->firstRow.',8')
 					->select(); 
+					 
  		 $this->assign('sPages',$sPages);// 赋值分页
 		 $this->assign("booklist", $booklist);
   		 $this->assign("menulist",$menulist);	 
@@ -50,6 +51,7 @@ class BookController extends Controller
 			$model=M('book');
 			$bookdetail=$model->find(I('get.type')); 
 			$this->assign("bookdetail",$bookdetail);
+			
 			$this->display();
 		}
 		 
