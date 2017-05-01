@@ -22,7 +22,7 @@ class BookModel extends Model{
 				//补全字段 
 				$post['img_path'] = UPLOAD_PATH . $info['savepath'] . $info['savename'];
 				$post['book_publish_time'] = strtotime($post['book_publish_time']);
-				 
+				$post['book_up_time'] =time();
 			 	$result=$this->add($post);   
 			} 
 		}
