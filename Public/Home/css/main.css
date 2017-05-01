@@ -87,7 +87,7 @@
 .header-main {
     position: relative;
     margin: auto;
-    width: 90%;
+    width: 85%;
     height: 100px;
 }
 
@@ -105,19 +105,15 @@
 
 }
 
-.search-box {
-    position: relative;
-    width: 90%;
-    height: 100px;
-    margin: auto;
+.search-box {  
+    height: 100px; 
 }
 
 .search .search-box .search-select {
     z-index: 20;
 }
 
-.search {
-    position: relative;
+.search { 
     /*width: 1360px;*/
     height: 100px;
     margin: auto;
@@ -270,7 +266,7 @@
 }
 
 .h-main {
-    margin: auto;
+   float: left;
 }
 
 .sp {
@@ -776,7 +772,8 @@
 
 .footer {
     margin: 50px 0;
-    width: 1360px;
+    width: 100%;
+    clear: both;
 
 }
 
@@ -883,7 +880,7 @@
 }
 .load .input{
     width: 85%;
-    height: 30px;
+    height: 32px;
 }
 .load .inp_pwd{
     top: 35%;
@@ -967,7 +964,7 @@
 }
 .reg .input{
     width: 85%;
-    height: 30px;
+    height: 32px;
 }
 .reg .inp_pwd{
     top: 35%;
@@ -1044,7 +1041,7 @@
 
 }
 .pwd{
-    top: 135px;
+    top: 137px;
     left: 28px;
 }
 .user{
@@ -1062,7 +1059,7 @@
 .input{
     outline: medium;
     border: 2px solid #d81e06;
-    padding-left: 50px;
+    padding-left: 40px;
 
 }
 .input:focus{
