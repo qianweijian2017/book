@@ -17,6 +17,9 @@ select:focus,button{
 	outline: none;
 	border:none;
 }
+input{
+	font-style: normal;
+}
 header,footer,nav,section,aside,article,figure,figcaption{
 	display: block;
 }
