@@ -19,17 +19,11 @@
 		<div class="order-header clearfix">
 			<p>
 				<a href="" class="active">所有订单</a>
-			</p>
-			<p>
-				<a href="">待付款</a>
-			</p>
-			<p>
-				<a href="">可评价</a>
-			</p>
-			<form action="" method="get" > 
+			</p> 
+			<!-- <form action="" method="get" > 
 				<input type="search" placeholder="请输入订单号或商品名" name="keyword">
 				<button type="submit">订单搜索</button> 
-			</form>
+			</form> -->
 		</div>
 		<div class="order-list">
 			<table class="order-col">
@@ -42,73 +36,42 @@
 					<th>商品操作</th>
 				</tr> 
 				<!-- 遍历开始 -->
+				 
 				 <tbody class="tbody">
 					<tr class="order-time">
 						<td colspan="6" class="time">
-							<strong>2017-04-17</strong>  
-							<span>订单号:3238389628873024</span>
+							<strong>{$orderlist.buyed_time|date="Y-m-d",###}</strong>  
+							<span>订单号:{$orderlist.order_no}</span>
 						</td>  
 					</tr> 
 					<tr>
 						<td>
-							<a href="">
+							<a href="{:U('book/bookdetail',array('type'=>$orderlist[id]))}">
 								<div class="order-img">
-									<img src="__UPLOAD_PATH__/10.jpg">
+									<img src="__WORKING_PATH__{$orderlist['img_path']}">
 								</div>
 								<p class="detail">
-									【广东联通官方旗舰店】 30元 话费充值 广东联通 30元面值自助充
+									{$orderlist.book_name}
 								</p>
 							</a>
 						</td>
-						<td>￥10.00</td>
+						<td>{$orderlist.book_prince}</td>
 						<td>1</td>
 						<td>
 							<strong>
-							 ￥10.00
+							 {$orderlist.book_zk_prince}
 							</strong>
 							<p>(虚拟物品)</p>
 						</td>
 						<td>已购买</td>  
 						<td>
-							<a href="">删除</a>
+							<a href="{U:('book/delete',array('id'=>$orderlist[id]))}">删除</a>
 						</td>
 					</tr> 
 				 </tbody>
 				<!-- 遍历开始 end-->
-				<!-- 遍历开始 -->
-				 <tbody>
-					<tr class="order-time">
-						<td colspan="6" class="time">
-							<strong>2017-04-17</strong> 
-							<span>订单号:3238389628873024</span>
-						</td>  
-					</tr> 
-					<tr>
-						<td>
-							<a href="">
-								<div class="order-img">
-									<img src="__UPLOAD_PATH__/10.jpg">
-								</div>
-								<p class="detail">
-									【广东联通官方旗舰店】 30元 话费充值 广东联通 30元面值自助充
-								</p>
-							</a>
-						</td>
-						<td>￥10.00</td>
-						<td>1</td>
-						<td>
-							<strong>
-								￥10.00
-							</strong>
-							<p>(虚拟物品)</p>
-						</td>
-						<td>已购买</td>  
-						<td>
-							<a href="">删除</a>
-						</td>
-					</tr> 
-				  </tbody>
-				<!-- 遍历开始 end-->
+		 
+				  
 			</table>
 			 
 		</div>
