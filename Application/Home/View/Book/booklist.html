@@ -84,19 +84,19 @@
 				 	</div>
 				 	 <dl>
 				 	 	<dt class="list-item-title" title="{$bookitem.book_name}">
-				 	 		<a href="{:U('Book/bookdetail',array('type'=>$bookitem[id]))}">{$bookitem.book_name}</a>
+				 	 		<a href="{:U('Book/bookdetail',array('type'=>$bookitem[id]))}">{$bookitem.book_name|mb_substr=###,0,15}</a>
 				 	 	</dt>
 				 	 	<dd>
 				 	 		<span>
 				 	 			作者:
 				 	 		</span>  
 				 	 		<span>
-					 	 		<a href="">
-					 	 			{$bookitem.book_author}
+					 	 		<a href="javascript:;">
+					 	 			{$bookitem.book_author|mb_substr=###,0,10}
 					 	 		</a>
 				 	 		</span>
 							<span>
-								<a href="">
+								<a href="{:U('Book/booklist',array('type'=>$bookitem[book_type]))}">
 									{$bookitem.type_name}
 								</a> 
 							</span>
