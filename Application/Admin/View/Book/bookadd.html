@@ -3,10 +3,7 @@
 		
 	<h3>添加书籍</h3>
 	<br>
-	<p>都不能为空</p>
-	
-		
-	
+	<p>都不能为空</p> 
 	<form action="{:U('add')}"  method="post" enctype="multipart/form-data">
 		<div class="book_left clearfix">
 			<label  class="clearfix">
@@ -14,7 +11,7 @@
 					书名:
 				</span> 
 				<cite>
-					<input type="text" name="book_name" required="required" />
+					<input type="text" name="book_name" value="{$bookitem[book_name]}" required="required" />
 				</cite>
 			</label>
 			<label  class="clearfix">
@@ -22,7 +19,7 @@
 					作者/编著:
 				</span> 
 				<cite>
-					<input type="text" name="book_author" required="required"  />
+					<input type="text" name="book_author" value="{$bookitem[book_author]}" required="required"  />
 				</cite>
 			</label>
 			<label  class="clearfix">
@@ -30,7 +27,7 @@
 					书类型:
 				</span> 
 				<cite>
-					<select name="book_type" required="required">
+					<select name="book_type" required="required"  value="{$bookitem[book_type]}">
 						<volist name="menulist" id="menuitem"> 
 							<option value="{$menuitem[id]}">{$menuitem.type_name}</option>
 						</volist>
@@ -42,7 +39,10 @@
 					书介绍:
 				</span> 
 				<cite>
-					 <textarea name="book_detail"></textarea>
+					 <php> 
+					 	$detail=trim(htmlspecialchars_decode($bookitem['book_detail']))
+					 </php>
+					 <textarea rows="10" cols="30" name="book_detail">{$detail}</textarea>
 				</cite>
 			</label>
 		</div>
@@ -52,7 +52,7 @@
 					价格:
 				</span> 
 				<cite>
-					<input type="number" max="999" min="1" name="book_prince" required="required"  />
+					<input type="number" value="{$bookitem[book_prince]}" max="999" min="1" name="book_prince" required="required"  />
 				</cite>
 			</label>
 			<label  class="clearfix">
@@ -60,7 +60,7 @@
 					折扣后价格:
 				</span> 
 				<cite>
-					<input type="number"  max="999"  min="1" name="book_zk_prince" required="required"  />
+					<input type="number" value="{$bookitem[book_zk_prince]}"  max="999"  min="1" name="book_zk_prince" required="required"  />
 				</cite>
 			</label>
 			<label  class="clearfix">
@@ -68,7 +68,7 @@
 					ISBN:
 				</span> 
 				<cite>
-					<input type="text" name="book_isbn" required="required"  />
+					<input type="text" value="{$bookitem[book_isbn]}"  name="book_isbn" required="required"  />
 				</cite>
 			</label>
 			<label  class="clearfix">
@@ -76,7 +76,7 @@
 					出版社:
 				</span> 
 				<cite>
-					<input type="text" name="book_publish" required="required"  />
+					<input type="text"  value="{$bookitem[book_publish]}" name="book_publish" required="required"  />
 				</cite>
 			</label>
 			<label  class="clearfix">
@@ -84,16 +84,30 @@
 					出版时间:
 				</span> 
 				<cite>
-					<input type="date" name="book_publish_time" required="required"  />
+					<input type="date"   value="{$bookitem[book_publish_time]}" name="book_publish_time"  />
 				</cite>
 			</label>
 		</div>
 		<div class="filebox">
-			<input type="file" name="file" required="required">
+			<input type="file" name="file" >
 		</div>
-		<button type="submit" class="btn btn-info btn-md">添加</button>
+		<input type="hidden" name="id" value="{$bookitem[id]}">
+		<button type="submit" class="btn btn-info btn-md">
+			<if condition="I('get.bookid')">
+				修改
+				<else/>
+				添加
+			</if>
+		</button>
 	</form>
 
 </div>
  
 <include file='include/footer'/> 
+<style type="text/css">
+	cite input{
+	width: 350px;
+	padding-left: 5px;
+	font-style: normal!important;
+}
+</style>

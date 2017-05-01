@@ -15,6 +15,7 @@
 	float: left;
 	margin-left: 10px;
 }
+
 .addbook p{
 	font-size: 16px;
 	color: #f00;
@@ -38,6 +39,7 @@
 	width: 150px;
 	height: 30px;
 }
+ 
 .addbook form select:focus{
 	border: 1px solid #ccc;
 }
