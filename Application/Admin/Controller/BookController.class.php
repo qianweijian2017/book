@@ -37,24 +37,19 @@ class BookController extends Controller {
      * @return [type] [description]
      */
     public function add()
-    {
+    { 
+        if(IS_POST){
+          $model=D('book'); //实例化自定义对象
 
-
-      if(IS_POST){
-        $model=D('book'); //实例化自定义对象
-
-        foreach ($_POST as $key => $value) { 
-            $post[$key]=trim($value);
-        } 
-        if($model->saveData($post,$_FILES['file'])){   
-              $this->success('添加成功');
-              
-        }else{
-            $this->error('添加失败');
-        } 
-      } 
-
-
-
+          foreach ($_POST as $key => $value) { 
+              $post[$key]=trim($value);
+          } 
+          if($model->saveData($post,$_FILES['file'])){   
+                $this->success('添加成功');
+                
+          }else{
+              $this->error('添加失败');
+          } 
+        }   
     }
 }

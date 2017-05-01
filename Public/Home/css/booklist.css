@@ -129,14 +129,13 @@
 	width: 50px;
 	height: 50px; 
 	color: #fff;
-	font-size: 20px;
+	font-size: 14px;
 	z-index: 88;
-	font-weight: 600;
-	letter-spacing: 1px;
+	font-weight: 600; 
 }
 .book_list  .listshow .listshow-item .prince span em{
 	font-style: normal;
-	font-size: 18px;
+	font-size: 1px;
 	font-weight: 500;
 }
 .book_list  .listshow .listshow-item .prince del{
@@ -147,9 +146,8 @@
     top: 31px;
     text-align: center;
     right: 0;
-    font-size: 14px;
-    color: #fff;
-    letter-spacing: 1px;
+    font-size: 12px;
+    color: #fff; 
     z-index: 5;
 }
 .book_list  .listshow .listshow-item .list-item-img{

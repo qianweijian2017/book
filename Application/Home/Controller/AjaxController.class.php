@@ -71,17 +71,7 @@ class AjaxController extends Controller
 		 	}
 	 	}
 	}
-	/**
-	 * 退出登陆
-	 * @return [type] [description]
-	 */
-	public function doExit(){ 
-		 session("auth",null);
-		 $this->ajaxReturn(
-		 		array("success"=>1)
-		 	);
-		 exit;
-	}
+	
 	/**
 	 * 加入购物车
 	 * @return [type] [description]
@@ -144,22 +134,23 @@ class AjaxController extends Controller
 		 //如果传来的是post请求
 		 if(IS_POST){
 		 	$controller=I("post.controllerName");
-		 	$id=I('post.id'); 
-		 	$cart=D('collect'); //实例化购物车模型 
+		 	$id=I('post.id'); //书的ID
+		 	$cart=D('collect'); //实例化购物车模型  
 		 	//查询用户是否已经收藏过此商品
-		 	$count=$cart->where("user_id={$user['id']} and book_id=$id")->find();
+		 	$count=$cart->where("user_id={$user['id']} and book_id=$id")->find(); 
 		 	if(!$count){    
 		 		$cart->user_id=$user['id'];
 		 		$cart->book_id=$id;
 		 		$cart->amount=1;
-		 		if($cart->add()){
+		 		if($cart->add()){  
+	 				M('book')->where("id=$id")->setInc("book_collect",1); 
 	 		 		$this->ajaxReturn(
 		 		 		array(
 		 		 			"info"=>"加入收藏成功"
 		 		 			)
 	 		 		);
 	 		 		exit;
-	 			}
+	 			} 
 		 	}else{ 
 		 		//收藏过就不用再收藏了
  		 		$this->ajaxReturn(
@@ -213,5 +204,16 @@ class AjaxController extends Controller
          			)
          	);
          exit;
+	}
+	/**
+	 * 退出登陆
+	 * @return [type] [description]
+	 */
+	public function doExit(){ 
+		 session("auth",null);
+		 $this->ajaxReturn(
+		 		array("success"=>1)
+		 	);
+		 exit;
 	}
 }
