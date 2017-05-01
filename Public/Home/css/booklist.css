@@ -186,6 +186,7 @@
 }
 .book_list  .listshow .listshow-item dl dt a{
 	color: #262626;
+	font-size: 15px;
 }
 .book_list  .listshow .listshow-item dl dd{
 	line-height: 25px;
