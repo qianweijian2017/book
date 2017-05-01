@@ -13,7 +13,7 @@ a,a:hover,a:link{
 ul,ol{
 	list-style: none; 
 }
-select:focus,input:focus,button,input{ 
+select:focus,input:focus,button{ 
 	outline: none;
 	border:none;
 }
