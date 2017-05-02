@@ -15,8 +15,7 @@ class UserController extends Controller
 			$buyed=$model->alias("a")
 					 ->join("__USER__ u on u.id=a.user_id")
 					 ->join("__BOOK__ b on b.id=a.book_id")
-					 ->where("a.user_id={$user['id']}")
-					 ->field("order_no,b.id,buyed_time,img_path,book_name,book_prince,book_zk_prince")
+					 ->where("a.user_id={$user['id']}") 
 					 ->select();
 			$this->assign("orderlist",$buyed);
 			 
