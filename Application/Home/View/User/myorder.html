@@ -27,51 +27,56 @@
 		</div>
 		<div class="order-list">
 			<table class="order-col">
-				<tr class="order-item-title">
-					<th>书籍</th>
-					<th>单价</th>
-					<th>数量</th>
-					<th>实付款</th>
-					<th>交易状态</th> 
-					<th>商品操作</th>
-				</tr> 
-				<!-- 遍历开始 -->
-				 
-				 <tbody class="tbody">
-					<tr class="order-time">
-						<td colspan="6" class="time">
-							<strong>{$orderlist.buyed_time|date="Y-m-d",###}</strong>  
-							<span>订单号:{$orderlist.order_no}</span>
-						</td>  
+				<if condition="$orderlist">
+					<tr class="order-item-title">
+						<th>书籍</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>实付款</th>
+						<th>交易状态</th> 
+						<th>商品操作</th>
 					</tr> 
-					<tr>
-						<td>
-							<a href="{:U('book/bookdetail',array('type'=>$orderlist[id]))}">
-								<div class="order-img">
-									<img src="__WORKING_PATH__{$orderlist['img_path']}">
-								</div>
-								<p class="detail">
-									{$orderlist.book_name}
-								</p>
-							</a>
-						</td>
-						<td>{$orderlist.book_prince}</td>
-						<td>1</td>
-						<td>
-							<strong>
-							 {$orderlist.book_zk_prince}
-							</strong>
-							<p>(虚拟物品)</p>
-						</td>
-						<td>已购买</td>  
-						<td>
-							<a href="{U:('book/delete',array('id'=>$orderlist[id]))}">删除</a>
-						</td>
-					</tr> 
-				 </tbody>
-				<!-- 遍历开始 end-->
-		 
-				  
+					<!-- 遍历开始 -->
+					 <volist name="orderlist" id="orderitem">
+					 <tbody class="tbody">
+						<tr class="order-time">
+							<td colspan="6" class="time">
+								<strong>{$orderlist.buyed_time|date="Y-m-d",###}</strong>  
+								<span>订单号:{$orderlist.order_no}</span>
+							</td>  
+						</tr> 
+						<tr>
+							<td>
+								<a href="{:U('book/bookdetail',array('type'=>$orderlist[id]))}">
+									<div class="order-img">
+										<img src="__WORKING_PATH__{$orderlist['img_path']}">
+									</div>
+									<p class="detail">
+										{$orderlist.book_name}
+									</p>
+								</a>
+							</td>
+							<td>{$orderlist.book_prince}</td>
+							<td>1</td>
+							<td>
+								<strong>
+								 {$orderlist.book_zk_prince}
+								</strong>
+								<p>(虚拟物品)</p>
+							</td>
+							<td>已购买</td>  
+							<td>
+								<a href="{U:('book/delete',array('id'=>$orderlist[id]))}">删除</a>
+							</td>
+						</tr> 
+					 </tbody>
+					<!-- 遍历开始 end-->
+			 		</volist>
+			 		<else />
+			 		<p class="center">还没买过任何东西,快去购买吧!
+			 				<a href="{:U('index/index')}">>>></a>
+			 		</p>
+				</if>
 			</table>
 			 
 		</div>
