@@ -7,7 +7,7 @@ class IndexController extends Controller {
 	 * @return [type] [description]
 	 */
     public function index(){
-    	 
+    	  
         $this->display('./index');
     }
     

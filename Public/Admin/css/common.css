@@ -5,7 +5,15 @@ body{
 .tb_bg{
 	background-color: #C9C9C9;
 }
+.center{
+	text-align: center!important;
+	font-size: 20px;
+	color: #f00;
 
+}
+.center:hover{
+	background: none!important;
+}
 .header{
 	height: 80px;
 	line-height: 80px; 

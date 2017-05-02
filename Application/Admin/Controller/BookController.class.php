@@ -40,8 +40,7 @@ class BookController extends Controller {
         $this->display(); 
     } 
 
-
-
+ 
     /**
      * 显示添加商品页面
      * @return [type] [description]
