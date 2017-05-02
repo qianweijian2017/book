@@ -102,6 +102,7 @@ class AjaxController extends Controller
  		 		exit; 
 
 		 	}else{	//如果没有加入过,创建一个
+		 		$cart->create();
 		 		$cart->user_id=$user['id'];
 		 		$cart->book_id=$id;
 		 		$cart->amount=1;
@@ -137,13 +138,14 @@ class AjaxController extends Controller
 		 	$id=I('post.id'); //书的ID
 		 	$cart=D('collect'); //实例化购物车模型  
 		 	//查询用户是否已经收藏过此商品
-		 	$count=$cart->where("user_id={$user['id']} and book_id=$id")->find(); 
-		 	if(!$count){    
+		 	$count=$cart->where("user_id={$user['id']} and book_id=$id")->count(); 
+		 
+		 	if($count==0){    
 		 		$cart->user_id=$user['id'];
 		 		$cart->book_id=$id;
 		 		$cart->amount=1;
 		 		if($cart->add()){  
-	 				M('book')->where("id=$id")->setInc("book_collect",1); 
+	 				M('book')->where("id=$id")->setInc("amount",1); 
 	 		 		$this->ajaxReturn(
 		 		 		array(
 		 		 			"info"=>"加入收藏成功"
