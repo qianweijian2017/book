@@ -787,6 +787,7 @@
     height: 80px;
     background: #F9F9F9;
     WIDTH: 100%;
+    margin-bottom: 20px;
 }
 
 .footer .icon-ul {
@@ -810,7 +811,7 @@
 .f-text {
     font-weight: bolder;
     font-size: 18px;
-    top: -67px;
+    top: -45px;
     left: 134px;
     position: relative;
     display: block;
