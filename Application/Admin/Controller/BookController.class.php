@@ -1,8 +1,8 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
+use Admin\Common\Controller\AuthController;
 use Org\Util\page;
-class BookController extends Controller {
+class BookController extends AuthController {
     /**
      * 图书管理
      * @return [type] [description]

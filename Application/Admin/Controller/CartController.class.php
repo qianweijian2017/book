@@ -1,8 +1,9 @@
 <?php
+
 namespace Admin\Controller;
-use Think\Controller;
+use Admin\Common\Controller\AuthController;
 use Org\Util\page;
-class CartController extends Controller {
+class CartController extends AuthController {
 
 	public function cartlist()
 	{

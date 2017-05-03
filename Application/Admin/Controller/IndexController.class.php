@@ -1,7 +1,8 @@
 <?php
+
 namespace Admin\Controller;
-use Think\Controller;
-class IndexController extends Controller {
+use Admin\Common\Controller\AuthController;
+class IndexController extends AuthController {
 	/**
 	 * 首页
 	 * @return [type] [description]

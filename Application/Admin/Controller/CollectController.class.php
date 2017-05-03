@@ -1,7 +1,8 @@
 <?php
+
 namespace Admin\Controller;
-use Think\Controller; 
-class CollectController extends Controller {
+use Admin\Common\Controller\AuthController;
+class CollectController extends AuthController {
 
 	public function collectlist($value='')
 	{ 

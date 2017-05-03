@@ -1,8 +1,9 @@
 <?php
+
 namespace Admin\Controller;
-use Think\Controller;
+use Admin\Common\Controller\AuthController;
 use Org\Util\page;
-class NavController extends Controller {
+class NavController extends AuthController {
     /**
      * 顶部导航管理
      * @return [type] [description]

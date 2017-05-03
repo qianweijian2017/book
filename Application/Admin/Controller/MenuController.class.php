@@ -1,8 +1,9 @@
 <?php
+
 namespace Admin\Controller;
-use Think\Controller;
+use Admin\Common\Controller\AuthController;
 use Org\Util\page;
-class MenuController extends Controller {
+class MenuController extends AuthController {
     /**
      * 菜单列表管理
      * @return [type] [description]

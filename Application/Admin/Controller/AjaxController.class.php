@@ -1,7 +1,8 @@
 <?php
+
 namespace Admin\Controller;
-use Think\Controller;
-class AjaxController extends Controller {
+use Admin\Common\Controller\AuthController;
+class AjaxController extends AuthController {
     /**
      * 处理基本的CURD操作  
      * @return [type] [description]

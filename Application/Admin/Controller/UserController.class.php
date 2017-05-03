@@ -1,8 +1,29 @@
 <?php
+
 namespace Admin\Controller;
-use Think\Controller;
+use Admin\Common\Controller\AuthController;
 use Org\Util\page;
-class UserController extends Controller {
+class UserController extends AuthController {
+  /**
+   * 登陆操作
+   * @return [type] [description]
+   */
+    public function doLogin()
+    {
+      if(IS_POST){
+        $model=M('user');
+        $user_name=I('post.user_name');
+        $user_pwd=I('post.user_pwd');
+        $user=$model -> where("user_name = '{$user_name}' and user_pwd = '{$user_pwd}'")
+                     -> find();
+        if($user['role_id']==2){
+          session("admin",$user);
+          $this->success("登陆成功",U('index/index'),3);
+        }else{
+          $this->error("登陆错误!");
+        }
+      }
+    }
     /**
      * 用户列表管理
      * @return [type] [description]

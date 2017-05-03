@@ -1,8 +1,8 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
+use Admin\Common\Controller\AuthController;
 use Org\Util\page;
-class BuyedController extends Controller {
+class BuyedController extends AuthController {
 
 	public function buyedlist()
 	{
