@@ -6,8 +6,8 @@ use Think\Auth;
 class AuthController extends Controller {
 
 	public function _initialize(){
-		$auth=session("auth");
-		if(!$auth){
+		$admin=session("admin");
+		if(!$admin){
 			$this->error("请先登陆!",U('user/login'));
 		}
  	}
