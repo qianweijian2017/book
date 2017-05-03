@@ -2,6 +2,10 @@
 namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
+    /**
+     * 首页数据显示
+     * @return [type] [description]
+     */
     public function index(){  
     	$nav=M("nav");		//获取导航模型
         $navlist=$nav->limit("8")->order("sort desc")->select();  //根据降序排列
@@ -18,7 +22,7 @@ class IndexController extends Controller {
         $this->assign("hotlist",$hotlist); 
  		$this->assign("newlist",$newlist); 
  		$this->assign("pulllist",$pulllist);
-        //展示
+         
         $this->display('./index');
-    }
+    } 
 }
