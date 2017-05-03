@@ -783,8 +783,10 @@
 }
 
 .footer .f-main {
+    FLOAT: right;
     height: 80px;
     background: #F9F9F9;
+    WIDTH: 100%;
 }
 
 .footer .icon-ul {
