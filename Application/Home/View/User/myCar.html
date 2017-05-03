@@ -15,82 +15,28 @@
     </div>
 
     <ul>
-        <li  pro-id="">
-            <input type="checkbox" class="c-box" name="c-box" pro-id="">
-            <div class="pic">
-                <a href="">
-                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>
-                    <!--<img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>-->
-                </a>
-            </div>
-            <span class="pro-name">
-                	半小时漫画中国史
-            </span>
-            <span class="pro-author">
-                	John
-            </span>
-            <span class="pro-price"><c>￥</c>56</span>
-
-            <a class="delete">
-                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>            </a>
-        </li>
-        <li  pro-id="">
-            <input type="checkbox" class="c-box" name="c-box" pro-id="">
-            <div class="pic">
-                <a href="">
-                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>
-                </a>
-            </div>
-            <span class="pro-name">
-                	半小时漫画中国史
-            </span>
-            <span class="pro-author">
-                	John
-            </span>
-            <span class="pro-price"><c>￥</c>56</span>
-            <a class="delete">
-                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>
-            </a>
-        </li>
-        <li  pro-id="">
-            <input type="checkbox" class="c-box" name="c-box" pro-id="">
-            <div class="pic">
-                <a href="">
-                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>
-                </a>
-            </div>
-            <span class="pro-name">
-                	半小时漫画中国史
-            </span>
-            <span class="pro-author">
-                	John
-            </span>
-            <span class="pro-price"><c>￥</c>56</span>
-
-            <a class="delete">
-                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>
-            </a>
-        </li>
-        <li  pro-id="">
-            <input type="checkbox" class="c-box" name="c-box" pro-id="">
-            <div class="pic">
-                <a href="">
-                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>
-                </a>
-            </div>
-            <span class="pro-name">
-                	半小时漫画中国史
-            </span>
-            <span class="pro-author">
-                	John
-            </span>
-            <span class="pro-price"><c>￥</c>56</span>
-
-            <a class="delete">
-                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>
-            </a>
-        </li>
-
+        <volist name="cartlist" id="cartitem">
+            <li  data-id="{$cartitem['cart_id']}">
+                <input type="checkbox" class="c-box" name="c-box" pro-id="">
+                <div class="pic">
+                    <a href="{:U('book/bookdetail',array('type'=>$cartitem[book_id]))}">
+                        <img src="__WORKING_PATH__{$cartitem['img_path']}"/>
+                    </a>
+                </div>
+                <span class="pro-name">
+                     {$cartitem['book_name']}
+                </span>
+                <span class="pro-author">
+                     {$cartitem['book_author']}
+                </span>
+                <span class="pro-price">
+                     <c>￥</c>
+                     {$cartitem['book_prince']}
+                </span> 
+                <a class="delete">
+                    <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>            </a>
+            </li>
+        </volist>
     </ul>
 
 
