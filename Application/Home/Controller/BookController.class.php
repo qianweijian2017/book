@@ -47,8 +47,10 @@ class BookController extends Controller
 	public function bookdetail()
 	{ 
 		if(I('get.type')){
+			$id=I('get.type');
 			$model=M('book');
-			$bookdetail=$model->find(I('get.type')); 
+			$bookdetail=$model->find($id);  
+			$model->where("id=$id")->setInc("browse",1)    //浏览量+1 
 			$this->assign("bookdetail",$bookdetail); 
 			$this->display();
 		}
