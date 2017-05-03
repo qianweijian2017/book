@@ -11,8 +11,7 @@ class BookController extends Controller
 	 * 书籍列表
 	 * @return [type] [description]
 	 */
-	public function booklist()
-	{
+	public function booklist(){
 		 $book=M("book"); //创建书本对象
 		 $menu=M("menu");//创建菜单对象
 		 $menulist= $menu->select(); 
@@ -50,19 +49,29 @@ class BookController extends Controller
 		if(I('get.type')){
 			$model=M('book');
 			$bookdetail=$model->find(I('get.type')); 
-			$this->assign("bookdetail",$bookdetail);
-			
+			$this->assign("bookdetail",$bookdetail); 
 			$this->display();
 		}
 		 
+	}
+	public function delete()
+	{
+		if(IS_GET){
+			$id=I('get.id');
+			$buyed=M('buyed');
+			if($buyed->where("book_id=$id")->delete()){
+				$this->success("删除成功");
+			}else{
+				$this->error("删除失败");
+			}
+		}
 	}
  	/**
  	 * 根据条件获取分类 
  	 * @param  [string] $iSort [条件]
  	 * @return [string]        [拼凑where条件]
  	 */
-	 public function getSort($iSort)
-	 {
+	 public function getSort($iSort){
 
 	 	switch ($iSort) {
 	 		case 'collect':
@@ -74,8 +83,5 @@ class BookController extends Controller
 	 	}
 	 	return $sort;
 	 	
-	 }
-		 
-		
-	 
+	 } 
 }

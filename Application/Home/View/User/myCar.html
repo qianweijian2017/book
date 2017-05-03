@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="__HOME__/css/book_reset.css">
-    <script src="__HOME__/js/jquery-1.11.1.js"></script>
+ 
 </head>
 <body>
 <div class="car">
@@ -16,10 +16,10 @@
 
     </div>
 
-    <ul>
+    <ul id="Cartlist">
         <volist name="cartlist" id="cartitem">
-            <li  data-id="{$cartitem['cart_id']}">
-                <input type="checkbox" class="c-box" name="c-box" pro-id="">
+            <li>
+                <input type="checkbox" class="c-box" name="c-box" data-id="{$cartitem['cart_id']}">
                 <div class="pic">
                     <a href="{:U('book/bookdetail',array('type'=>$cartitem[book_id]))}">
                         <img src="__WORKING_PATH__{$cartitem['img_path']}"/>
@@ -33,7 +33,7 @@
                 </span>
                 <span class="pro-price">
                      <c>￥</c>
-                     {$cartitem['book_prince']}
+                     <c class="p-price">{$cartitem['book_prince']}</c>
                 </span> 
                 <a class="delete">
                     <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>            </a>
@@ -46,13 +46,14 @@
     <div class="buy-box" style="width: 100%; float: right">
         <input type="button" value="购买" class="buy" style="cursor: pointer">
         <div class="tip">
-            <span>总价格：  <c style="color: #d81e06">￥</c><span style="color: #d81e06">168</span></span>
+            <span>总价格：  <c style="color: #d81e06">￥</c><span class="total-price" style="color: #d81e06">0</span></span>
             <br>
-            <span>选中物品数量： <span></span></span>
+            <span>选中物品数量： <span class="select-product"></span></span>
         </div>
     </div>
 </div>
-</body>
+ 
+ <include file='include/footer'/> 
 <style>
     .tip{
         padding: 10px;
@@ -124,19 +125,117 @@
 
 </style>
 <script>
-    var count=$('.car ul').children().length;
+  
+    var s_pro = $('.select-product');
+    //初始化购物车数量
+    var count = $('.car ul').children().length;
+    //赋值数量
     $('.count').find('span').children().text(count);
-    $('.btn-select').on('click', function () {
 
+    $('input[name="c-box"]').on('click', function () {
+        //更新用户操作后的数据
+        init_count()
+    });
+
+    //全选&全不选
+    $('.btn-select').on('click', function () {
+        //判断全选框选中
         if ($(this).is(':checked')) {
 
             $('input[name="c-box"]').prop("checked", true);
+            $('.select-product').text(count);
+            var total_price = 0;
+            for (i = 0; i < count; i++) {
+                total_price += Number($('.p-price').eq(i).text());
+            }
+            $('.total-price').text(total_price);
         } else {
             $("input[name='c-box']").prop("checked", false);
+            //取消全选还原数值
+            $('.select-product').text(0);
+            $('.total-price').text(0);
         }
     });
+    //删除选中
+    $('.delete').on('click', function () {
+        $(this).parent().remove();
+        //刷新现行书本数量
+        count = $('.car ul').children().length;
+        //重新刷新数量赋值
+        $('.count').find('span').children().text(count);
+
+        //更新用户操作后的数据
+        init_count()
+
+    });
+
+    //更新数值方法
+    function init_count() {
+
+        var k = 0;
+        var total_price = 0;
+        //循环现行checkbox个数
+        for (i = 0; i < count; i++) {
+
+            if ($('input[name="c-box"]').eq(i).is(':checked')) {
+                k++;
+                total_price += Number($('.p-price').eq(i).text());
+            }
+            //赋值checkbox个数
+            $('.select-product').text(k);
+
+            //赋值总价格
+            $('.total-price').text(total_price);
+
+        }
+    }
+    function buy() {
+
+        var k = 0;
+
+        var array = [];
+
+        var pice;
+        for (i = 0; i < count; i++) {
+
+            if ($('input[name="c-box"]').eq(i).is(':checked')) {
+
+                pice =$('input[name="c-box"]').eq(i).attr('data-id');
+                array.push(pice)
+            }
+        }
+
+        return(array);
+    }
+    $('.buy').on('click', function () {
+
+
+        // $.ajax({ url: "myCar.html", context:buy() , success: function(){
+        //     if(buy().length===0){
+
+        //         alert("请选择要购买的书籍")
+
+        //     }else {
+        //         alert("购买成功")
+        //     }
+
+        // }});
+        var ids=buy();
+        $.post("{:U('Ajax/doBuy')}",{
+            data_id: ids
+        },function (data) {
+            
+           if(data.success){
+                alert(data.info);
+                location.href="{:U('user/myorder')}";
+           }else{
+                alert("失败");
+           }
+        })
+
+
+    })
+    
 </script>
 
-</body>
-</html>
-<include file='include/footer'/>
+ 

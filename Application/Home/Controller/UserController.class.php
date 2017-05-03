@@ -21,26 +21,26 @@ class UserController extends Controller
 					 ->join("__BOOK__ b on b.id=a.book_id")
 					 ->where("a.user_id={$user['id']}") 
 					 ->select();
-			$this->assign("orderlist",$buyed);
 			 
+			$this->assign("orderlist",$buyed);
+			$this->display();
 		}else{
 			$this->error("请先点击右上角登陆");
 		}
 
-		$this->display();
+		
 	} 
 	public function myCar()
 	{
-		$auth=session("auth");
+		$user=session("auth");
 		$model=M('cart');
-		if(!$auth){
+		if(!$user){
 			$this->error('请先登陆');exit;
 		}
-		$cartlist=$model->alias("c")
-						// ->join("__USER__ u on u.id=c.user_id")
+		$cartlist=$model->alias("c") 
 						->join("__BOOK__ b on b.id=c.book_id")
 						->field("c.*,b.*,b.id as book_id,c.id as cart_id")
-						->where("c.user_id = {$auth['user_id']}")
+						->where("c.user_id = {$user['id']}")
 						->select();
 						// dump($cartlist);exit;
 		$this->assign("cartlist",$cartlist);

@@ -166,6 +166,52 @@ class AjaxController extends Controller
 
 		 } 
 	}
+	public function doBuy()
+	{
+		$user=session("auth");
+		if(!$user){
+			$this->error('请登陆');
+			exit;
+		}
+		if(IS_POST){
+			$aIds=I('post.data_id');
+			$ids=implode($aIds,",");
+			$model=M('cart');
+			$data=$model
+					->where("user_id={$user['id']} and id in ({$ids}) ")
+					->select();
+			$time=time();
+			$buyed_model=M('buyed');
+			for($i = 0 ; $i < count($aIds) ; $i++){
+				$data[$i]['user_id']=$data[$i]['user_id'];
+				$data[$i]['order_no']=$time+rand(999,9999);
+				$data[$i]['book_id']=$data[$i]['book_id']; 
+				$data[$i]['buyed_time']=$time; 
+				$buyed_model->add($data[$i]);
+			}   
+			$result=$model->where("user_id={$user['id']}")->delete("{$ids}"); 
+			if($result){
+				$this->ajaxReturn(
+					array(
+						"info"=>"购买成功",
+						"success"=>1
+					)
+				); 
+			}else{ 
+				$this->ajaxReturn(
+					array( 
+						"success"=>0
+					)
+				);
+			}
+			
+			 
+
+		}
+	}
+
+
+
 	/**
 	 * 猜你喜欢
 	 * @return [type] [description]
