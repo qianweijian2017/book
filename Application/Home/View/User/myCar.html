@@ -11,7 +11,7 @@
 <div class="car">
     <input type="checkbox" value="全选" class="btn-select"><span>全选/全不选</span>
     <div class="count">
-        <span>物品数量： <span>5</span></span>
+        <span>物品数量： <span></span></span>
     </div>
 
     <ul>
@@ -39,7 +39,6 @@
             <div class="pic">
                 <a href="">
                     <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>
-                    <!--<img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>-->
                 </a>
             </div>
             <span class="pro-name">
@@ -49,33 +48,15 @@
                 	John
             </span>
             <span class="pro-price"><c>￥</c>56</span>
-
             <a class="delete">
-                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>            </a>
+                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>
+            </a>
         </li>
         <li  pro-id="">
             <input type="checkbox" class="c-box" name="c-box" pro-id="">
             <div class="pic">
                 <a href="">
-                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>                    <!--<img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>-->
-                </a>
-            </div>
-            <span class="pro-name">
-                	半小时漫画中国史
-            </span>
-            <span class="pro-author">
-                	John
-            </span>
-            <span class="pro-price"><c>￥</c>56</span>
-
-            <a class="delete">
-                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>            </a>
-        </li>
-        <li  pro-id="">
-            <input type="checkbox" class="c-box" name="c-box" pro-id="">
-            <div class="pic">
-                <a href="">
-                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>                                  <!--<img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>-->
+                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>
                 </a>
             </div>
             <span class="pro-name">
@@ -95,7 +76,6 @@
             <div class="pic">
                 <a href="">
                     <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>
-                    <!--<img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>-->
                 </a>
             </div>
             <span class="pro-name">
@@ -105,23 +85,24 @@
                 	John
             </span>
             <span class="pro-price"><c>￥</c>56</span>
+
             <a class="delete">
                 <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>
             </a>
         </li>
+
     </ul>
 
 
 
     <div class="buy-box" style="width: 100%; float: right">
-        <input type="button" value="购买" class="buy">
+        <input type="button" value="购买" class="buy" style="cursor: pointer">
         <div class="tip">
             <span>总价格：  <c style="color: #d81e06">￥</c><span style="color: #d81e06">168</span></span>
             <br>
-            <span>物品数量： <span>5</span></span>
+            <span>选中物品数量： <span></span></span>
         </div>
     </div>
-
 </div>
 </body>
 <style>
@@ -180,6 +161,7 @@
         margin: 10px;
     }
     .car .buy{
+        outline:none;
         color: #fff;
         font-weight: bold;
         background: #d81e06;
@@ -194,6 +176,8 @@
 
 </style>
 <script>
+    var count=$('.car ul').children().length;
+    $('.count').find('span').children().text(count);
     $('.btn-select').on('click', function () {
 
         if ($(this).is(':checked')) {
