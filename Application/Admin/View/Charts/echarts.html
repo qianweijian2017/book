@@ -12,11 +12,13 @@
 <script type="text/javascript"> 
 
     init(); 
+    //初始化
     function init() {
         GetBuyedData();
     }
     //清除饼状图的HTML
     function ClearChart() {	
+        
     	$("#chartsbox").html();
     }
     //当点击数据时,清空内容
@@ -39,17 +41,19 @@
              var data=data.data;
              var aTypeName=[];
              var aValue=[]; 
+             var Count=0;
              for(i in data){
                if(!data[i].browse){ continue; }
                     aTypeName.push(data[i].book_type);
                     aValue.push(data[i].browse); 
+                    Count+=Number(data[i].browse);
             }   
 
-            AppendPillarCharts(aTypeName,aValue);
+            AppendPillarCharts(aTypeName,aValue,Count);
          })
     }
      //制作柱状图
-    function AppendPillarCharts(aXTypeName,aSeriesValue,) {
+    function AppendPillarCharts(aXTypeName,aSeriesValue,Count) {
         var myChart = echarts.init(document.getElementById('chartsbox')); 
             option = {
                 color: ['#3398DB'],
@@ -81,7 +85,7 @@
                 ],
                 series : [
                     {
-                        name:'站长统计',
+                        name:'浏览比例',
                         type:'bar',
                         barWidth: '60%',
                         data:aSeriesValue           //柱状图的值
@@ -89,7 +93,9 @@
                 ]
             };
 
-        myChart.setOption(option);
+        myChart.setOption(option); 
+         $(".charts h4").remove();
+         $("#chartsbox").before("<h4 class='pull-right'>总浏览量:"+Count+"</h4>"); 
     }
     // 获取购买数据
     function GetBuyedData() {

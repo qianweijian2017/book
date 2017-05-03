@@ -26,9 +26,9 @@ class ChartsController extends AuthController {
 			for($i = 1 ;$i <= $menu_count ; $i ++ ){
 
 				$sale = $book -> alias("b")
-							  -> join("__MENU__ m on m.id = b.id")
-							  -> field("m.*,b.*,m.id as menu_id,b.id as book_id,type_name")
-							  -> where("m.id = '$i'")
+							  -> join("__MENU__ m on m.id = b.id","right")
+							  -> field("m.*,b.*")
+							  -> where("b.id = '$i'")
 							  -> sum("b.book_sale");
  
 				$book_type=$menu->find($i);
@@ -59,10 +59,10 @@ class ChartsController extends AuthController {
 			$menu_count=$menu->count(); 
 			for($i = 1 ;$i <= $menu_count ; $i ++ ){
 
-				$browse = $book -> alias("b")
-							  -> join("__MENU__ m on m.id = b.id")
-							  -> field("m.*,b.*,m.id as menu_id,b.id as book_id,type_name")
-							  -> where("m.id = '$i'")
+				$browse = $menu -> alias("m")
+							  -> join("__BOOK__ b on m.id = b.id","right")
+							  -> field("m.*,b.*,b.id as book_id,m.id as menu_id,type_name")
+							  -> where("b.id = '$i'")
 							  -> sum("b.browse");
  
 				$book_type=$menu->find($i);
