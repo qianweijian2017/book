@@ -1,10 +1,210 @@
+<include file='include/header'/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="__HOME__/css/book_reset.css">
+    <script src="__HOME__/js/jquery-1.11.1.js"></script>
 </head>
 <body>
-$END$
+<div class="car">
+    <input type="checkbox" value="全选" class="btn-select"><span>全选/全不选</span>
+    <div class="count">
+        <span>物品数量： <span>5</span></span>
+    </div>
+
+    <ul>
+        <li  pro-id="">
+            <input type="checkbox" class="c-box" name="c-box" pro-id="">
+            <div class="pic">
+                <a href="">
+                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>
+                    <!--<img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>-->
+                </a>
+            </div>
+            <span class="pro-name">
+                	半小时漫画中国史
+            </span>
+            <span class="pro-author">
+                	John
+            </span>
+            <span class="pro-price"><c>￥</c>56</span>
+
+            <a class="delete">
+                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>            </a>
+        </li>
+        <li  pro-id="">
+            <input type="checkbox" class="c-box" name="c-box" pro-id="">
+            <div class="pic">
+                <a href="">
+                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>
+                    <!--<img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>-->
+                </a>
+            </div>
+            <span class="pro-name">
+                	半小时漫画中国史
+            </span>
+            <span class="pro-author">
+                	John
+            </span>
+            <span class="pro-price"><c>￥</c>56</span>
+
+            <a class="delete">
+                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>            </a>
+        </li>
+        <li  pro-id="">
+            <input type="checkbox" class="c-box" name="c-box" pro-id="">
+            <div class="pic">
+                <a href="">
+                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>                    <!--<img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>-->
+                </a>
+            </div>
+            <span class="pro-name">
+                	半小时漫画中国史
+            </span>
+            <span class="pro-author">
+                	John
+            </span>
+            <span class="pro-price"><c>￥</c>56</span>
+
+            <a class="delete">
+                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>            </a>
+        </li>
+        <li  pro-id="">
+            <input type="checkbox" class="c-box" name="c-box" pro-id="">
+            <div class="pic">
+                <a href="">
+                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>                                  <!--<img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>-->
+                </a>
+            </div>
+            <span class="pro-name">
+                	半小时漫画中国史
+            </span>
+            <span class="pro-author">
+                	John
+            </span>
+            <span class="pro-price"><c>￥</c>56</span>
+
+            <a class="delete">
+                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>
+            </a>
+        </li>
+        <li  pro-id="">
+            <input type="checkbox" class="c-box" name="c-box" pro-id="">
+            <div class="pic">
+                <a href="">
+                    <img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>
+                    <!--<img src="__HOME__/imgs/qianweijian2925_1493085851274_68.jpg"/>-->
+                </a>
+            </div>
+            <span class="pro-name">
+                	半小时漫画中国史
+            </span>
+            <span class="pro-author">
+                	John
+            </span>
+            <span class="pro-price"><c>￥</c>56</span>
+            <a class="delete">
+                <img src="__HOME__/imgs/garbage.png" width="30px" height="30px"/>
+            </a>
+        </li>
+    </ul>
+
+
+
+    <div class="buy-box" style="width: 100%; float: right">
+        <input type="button" value="购买" class="buy">
+        <div class="tip">
+            <span>总价格：  <c style="color: #d81e06">￥</c><span style="color: #d81e06">168</span></span>
+            <br>
+            <span>物品数量： <span>5</span></span>
+        </div>
+    </div>
+
+</div>
+</body>
+<style>
+    .tip{
+        padding: 10px;
+        float: right;
+    }
+    .car{
+        width: 82%;
+        margin:50px auto;
+    }
+    .car li{
+        padding: 5px;
+        border: 1px solid #cccccc;
+        float: left;
+        width: 48.5%;
+        margin: 10px auto;
+        margin-right: 4px;
+    }
+    .car li span{
+        padding: 5px;
+        float: left;
+        width: 50%;
+    }
+    .car .c-box{
+        float: left;
+        margin: 68px 5px;
+        line-height:100px;
+    }
+    .car .pic{
+        float: left;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+    }
+    .car .pic img{
+        width: 150px;
+        height: 150px;
+    }
+    .car .delete{
+        cursor: pointer;
+        float: right;
+    }
+    .car .pro-name{
+        font-weight: bold;
+    }
+    .car .pro-author{
+        font-size: 14px;
+        color: #6F6F6F;
+    }
+    .car .pro-price{
+        color: #d81e06;
+        font-weight: bold;
+    }
+    .btn-select{
+        margin: 10px;
+    }
+    .car .buy{
+        color: #fff;
+        font-weight: bold;
+        background: #d81e06;
+        width: 99.6%;
+        padding: 5px;
+    }
+    .car .count{
+        float: right;
+        margin: auto;
+        line-height: 33px;
+    }
+
+</style>
+<script>
+    $('.btn-select').on('click', function () {
+
+        if ($(this).is(':checked')) {
+
+            $('input[name="c-box"]').prop("checked", true);
+        } else {
+            $("input[name='c-box']").prop("checked", false);
+        }
+    });
+</script>
+
 </body>
 </html>
+<include file='include/footer'/>
