@@ -1,9 +1,9 @@
 <?php
 
 namespace Admin\Controller;
-use Admin\Common\Controller\AuthController;
+use Think\Controller;
 use Org\Util\page;
-class UserController extends AuthController {
+class UserController extends Controller {
   /**
    * 登陆操作
    * @return [type] [description]
