@@ -1,0 +1,45 @@
+
+<include file='include/header'/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <div class="news">
+            <div class="video">
+                <video id="video" >
+                    <source src="__LIB__/mov_bb.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p>
+                今天是五四青年节。人民日报推出微视频《青年榜样习近平》。
+                青年意味着什么？从梁家河到中南海，习近平给出了他的答案，并用自己的言行，为青年树立了榜样。
+                他很能吃苦。在陕北农村插队，他下雨刮风在窑洞里铡草，晚上看牲口，什么活都干。再苦再忙，也没有放弃读书。
+                他工作很拼。在正定，他年轻想办好事，经常是通宵达旦干，当时差不多一个月大病一场。回忆起这段往事，他用自己的经历告诫年轻人不要总熬夜。
+                担任总书记后，他仍然保持着年轻时的活力，一直为人民办实事。他常会走到青年中间，与青年交朋友、谈心。对青年朋友，他充满期许，寄予厚望。
+            </p>
+        </div>
+</body>
+<style>
+    .news{
+        width: 50%;
+        margin: auto;
+    }
+    .news p{
+        letter-spacing: normal;
+        line-height: 50px;
+    }
+    .news .video video{
+        width: 100%;
+        margin: auto;
+        float: inherit;
+    }
+</style>
+<script>
+    var myVideo = document.getElementById("video");
+    myVideo.play();
+</script>
+</html>
+<include file='include/footer'/>
