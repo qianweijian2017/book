@@ -48,13 +48,13 @@
 				</label> 
 			</th>
 			 <th>ID</th>
-			 <th>用户ID</th>  
+			 <th>用户名</th>  
 			 <th>书名</th>  
 			 <th>价格</th>
 			 <th>订单号</th>  
 			 <th>购买时间</th>     
 		</tr>
-		<if condition="$cartlist">
+		<if condition="$buyedlist">
 		 <volist name="buyedlist" id="buyeditem">
 			 <tr>
 			 	<td>
@@ -64,7 +64,7 @@
 			 		{$buyeditem.id}
 			 	</td>
 			 	<td>
-			 		{$buyeditem.user_id}
+			 		{$buyeditem.user_name}
 			 	</td> 
 				<td>
 			 		{$buyeditem.book_name|mb_substr=###,0,20}
