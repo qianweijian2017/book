@@ -91,9 +91,11 @@
         <div class="h-main">
             <div class="search-box">
                 <div class="search">
-                <form>
+                <form action="{:U('book/booklist')}" method="get">
                     <div class="search-text">
-                        <input type="text" style="outline: medium;border: none" placeholder="书名/作者">
+                        <input type="text" style="outline: medium;border: none" 
+                            name="bk_keyword" 
+                        placeholder="书名/作者">
                     </div> 
                     <div class="search-select" id="sort">
                         <button type="submit" class="text">
