@@ -16,13 +16,22 @@ class UserController extends Controller {
         $user_pwd=I('post.user_pwd');
         $user=$model -> where("user_name = '{$user_name}' and user_pwd = '{$user_pwd}'")
                      -> find();
-        if($user['role_id']==2){
+        if($user['role_id'] == 2){  //权限为2 是管理员
           session("admin",$user);
           $this->success("登陆成功",U('index/index'),3);
         }else{
-          $this->error("登陆错误!");
+          $this->error('你没有权限!');
         }
       }
+    }
+    /**
+     * 退出
+     * @return [type] [description]
+     */
+    public function doExit()
+    {
+       session("admin",null);
+       $this->redirect('Home/index/index');
     }
     /**
      * 用户列表管理
@@ -31,11 +40,13 @@ class UserController extends Controller {
     public  function userlist()
     {   
       	$model=M('user');   
-     		$count=$model->where($where)->count(); //where 为条件,可作分类分页 
+     		$count=$model->where($where) -> count(); //where 为条件,可作分类分页 
 
      		$page=new Page($count,8);	//count总页数,limit是显示的行数   
   	    $sPages=$page->show();
-  	    $userlist=$model->where($where)->limit($page->firstRow.',8' )->select();
+  	    $userlist=$model -> where($where) 
+                         -> limit($page ->firstRow.',8' )
+                         ->select();
   	    $this->assign('sPages',$sPages);// 赋值分页输出  
       	$this->assign("userlist",$userlist);
         $this->display();	

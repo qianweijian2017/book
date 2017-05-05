@@ -22,19 +22,20 @@ class ChartsController extends AuthController {
 			//联合表 menu book
 			$book = M('book');  
 			$menu = M('menu');
+			
 			$menu_count=$menu->count(); 
 			for($i = 1 ;$i <= $menu_count ; $i ++ ){
 
 				$sale = $book -> alias("b")
-							  -> join("__MENU__ m on m.id = b.id","right")
+							  -> join("__MENU__ m on m.id = b.id","left")
 							  -> field("m.*,b.*")
-							  -> where("b.id = '$i'")
+							  -> where("book_type = '$i'")
 							  -> sum("b.book_sale");
  
 				$book_type=$menu->find($i);
 				$data[$i]['sale'] = $sale;
 				$data[$i]['book_type'] = $book_type['type_name'];
-
+				
 			} 
 			
 			$this->ajaxReturn(
@@ -56,19 +57,18 @@ class ChartsController extends AuthController {
 			//联合表 menu book
 			$book = M('book');  
 			$menu = M('menu');
+			$number=0; 
 			$menu_count=$menu->count(); 
 			for($i = 1 ;$i <= $menu_count ; $i ++ ){
 
 				$browse = $menu -> alias("m")
 							  -> join("__BOOK__ b on m.id = b.id","right")
-							  -> field("m.*,b.*,b.id as book_id,m.id as menu_id,type_name")
-							  -> where("b.id = '$i'")
-							  -> sum("b.browse");
- 
+							  -> field("b.id as book_id,type_name,browse")
+							  -> where("book_type = '$i'")
+							  -> sum('browse'); 
 				$book_type=$menu->find($i);
 				$data[$i]['browse'] = $browse;
-				$data[$i]['book_type'] = $book_type['type_name'];
-
+				$data[$i]['book_type'] = $book_type['type_name']; 
 			} 
 			
 			$this->ajaxReturn(

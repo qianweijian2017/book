@@ -4,7 +4,7 @@
 #booklist{
 	height: 500px;
 	margin-top: 30px; 
-	font-family: PingFangSC-Regular,'-apple-system',Simsun;
+	font-family:  arial;
 }
 #booklist a{
 	text-decoration: none;

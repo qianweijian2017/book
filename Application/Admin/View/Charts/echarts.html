@@ -1,13 +1,19 @@
 <include file='include/header'/>
 <link rel="stylesheet" type="text/css" href="__ADMIN__/css/echarts.css">
 <div class="charts">
-    <button id="buyed_charts" class="btn_charts">购书统计</button>
+    <button id="buyed_charts" class="btn_charts insetbox">购书统计</button>
     <button id="browse_charts" class="btn_charts">浏览量统计</button>
     <div id="chartsbox"  >
         
     </div>
 </div> 
 <include file='include/footer'/>
+<style type="text/css">
+    .insetbox{
+        box-shadow: inset 0px 0px 10px  #000;
+        border:1px solid #000;
+    }
+</style>
 <script type="text/javascript" src="__LIB__/echarts/echarts.min.js"></script>
 <script type="text/javascript"> 
 
@@ -17,8 +23,7 @@
         GetBuyedData();
     }
     //清除饼状图的HTML
-    function ClearChart() {	
-        
+    function ClearChart() {	 
     	$("#chartsbox").html();
     }
     //当点击数据时,清空内容
@@ -37,7 +42,7 @@
     
 
     function GetBrowseData() {  
-         $.post("{:U('charts/browse')}", {"1":1}, function (data) {
+         $.post("{:U('charts/browse')}", {"1":1}, function (data) { 
              var data=data.data;
              var aTypeName=[];
              var aValue=[]; 
@@ -85,7 +90,7 @@
                 ],
                 series : [
                     {
-                        name:'浏览比例',
+                        name:'浏览量',
                         type:'bar',
                         barWidth: '60%',
                         data:aSeriesValue           //柱状图的值
@@ -144,7 +149,7 @@
         },
         series : [
             {
-                name: '来自站长统计',
+                name: '购书量',
                 type: 'pie',
                 radius : '55%',
                 center: ['50%', '60%'],
@@ -161,7 +166,10 @@
     }
      myChart.setOption(option);
 }
-
+//样式  修改
+$(".btn_charts").click(function() {
+    $(this).addClass('insetbox').siblings().removeClass('insetbox');
+});
 
 </script>
  
