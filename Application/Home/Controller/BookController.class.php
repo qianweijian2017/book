@@ -12,7 +12,14 @@ class BookController extends Controller
 	 * @return [type] [description]
 	 */
 	public function booklist(){
-
+        //      -----------------------------------------------------------------
+        $user=session("auth");
+        if ($user){
+            $model=M('cart');
+            $resultCarNum = $model->where("user_id = {$user['id']}")->count();
+            $this->assign("resultCarNum",$resultCarNum);
+        }
+        //      -------------------------------------------------------------------
 		 $book=M("book"); //创建书本对象
 		 $menu=M("menu");//创建菜单对象
 		 $menulist= $menu->select(); 
@@ -73,7 +80,15 @@ class BookController extends Controller
 			$id=I('get.type');
 			$model=M('book');
 			$bookdetail=$model->find($id);  
-			$model->where("id=$id")->setInc("browse",1);    //浏览量+1 
+			$model->where("id=$id")->setInc("browse",1);    //浏览量+1
+            //      -----------------------------------------------------------------
+            $user=session("auth");
+            if ($user){
+                $model=M('cart');
+                $resultCarNum = $model->where("user_id = {$user['id']}")->count();
+                $this->assign("resultCarNum",$resultCarNum);
+            }
+            //      -------------------------------------------------------------------
 			$this->assign("bookdetail",$bookdetail); 
 			$this->display();
 		}

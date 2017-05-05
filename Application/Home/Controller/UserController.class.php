@@ -12,7 +12,15 @@ class UserController extends Controller
 	 * @return [type] [description]
 	 */
 	public function myorder()
-	{
+	{    //      -----------------------------------------------------------------
+        $user=session("auth");
+        if ($user){
+            $model=M('cart');
+            $resultCarNum = $model->where("user_id = {$user['id']}")->count();
+            $this->assign("resultCarNum",$resultCarNum);
+        }
+
+        //      -------------------------------------------------------------------
 		$user=session("auth");
 		if($user){
 			$model=M('buyed');
@@ -34,6 +42,7 @@ class UserController extends Controller
 	{
 		$user=session("auth");
 		$model=M('cart');
+
 		if(!$user){
 			$this->error('请先登陆');exit;
 		}
@@ -43,8 +52,10 @@ class UserController extends Controller
 						->where("c.user_id = {$user['id']}")
 						->select();
 						// dump($cartlist);exit;
+        $resultCarNum = $model->where("user_id={$user['id']}")->count();
+        $this->assign("resultCarNum",$resultCarNum);
 		$this->assign("cartlist",$cartlist);
 		$this->display();
 	}
-	  
+
 }

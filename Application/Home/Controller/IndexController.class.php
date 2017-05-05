@@ -16,6 +16,15 @@ class IndexController extends Controller {
         $newlist=$book_model->order("book_publish_time desc")->limit("10")->select();
         //获取新品列表
         $pulllist=$book_model->order("book_publish_time desc")->limit("1,10")->select();
+//        -----------------------------------------
+        $user=session("auth");
+        if ($user){
+            $model=M('cart');
+            $resultCarNum = $model->where("user_id = {$user['id']}")->count();
+            $this->assign("resultCarNum",$resultCarNum);
+        }
+//        -----------------------------------------
+//        $this->error($resultCarNum);exit;
         // 以下为赋值
  		$this->assign("navlist",$navlist);
         $this->assign("menulist",$menulist); 
