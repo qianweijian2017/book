@@ -1,20 +1,20 @@
-﻿ 
-<html lang="en">
+﻿<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>趣书购物</title>
     <link rel="stylesheet" href="__HOME__/css/main.css">
-    <link rel="stylesheet" href="__HOME__/css/reset.css"> 
-    <link rel="stylesheet" href="__HOME__/css/book_reset.css"> 
+    <link rel="stylesheet" href="__HOME__/css/reset.css">
+    <link rel="stylesheet" href="__HOME__/css/book_reset.css">
     <link rel="stylesheet" href="__HOME__/css/show.css">
     <link rel="stylesheet" href="__HOME__/css/common.css">
     <link rel="stylesheet" href="__LIB__/font-awesome-4.7.0/css/font-awesome.min.css">
-    
+
 </head>
- <script type="text/javascript">
-        var controllerName="{$Think.CONTROLLER_NAME}";
-        var IncartUrl="{:U('Ajax/incart')}"; 
-        var IncollectUrl="{:U('Ajax/incollect')}";  
+<script type="text/javascript">
+    var controllerName = "{$Think.CONTROLLER_NAME}";
+    var IncartUrl = "{:U('Ajax/incart')}";
+    var IncollectUrl = "{:U('Ajax/incollect')}";
+    var countCar = "{:U(Ajax/doCount)}";
 </script>
 <body>
 <!--//导航nav开始-->
@@ -22,7 +22,7 @@
     <div class="nav">
         <div class="nav-left">
             <div class="nav-left" style="display: none">
-                <a href="#" id="position">送至:<span class="nav-position">北京</span> <span class="pic"></span></a> 
+                <a href="#" id="position">送至:<span class="nav-position">北京</span> <span class="pic"></span></a>
                 <ul class="position" id="showPosition">
                     <li class="position-item"><a href="">北京</a></li>
                     <li class="position-item"><a href="">上海</a></li>
@@ -56,19 +56,19 @@
         <div class="nav-right">
             <ul class="nav-list">
                 <li class=" login" style="float: left">
-                  <div class="nav-login">欢迎光临趣书网，请
-                    <php>if(!session("auth")){</php>
-                      <a href="javascript:;" onclick="reg_fn()" class="reg_btn" style="color: #e63735;">注册
-                      </a>或
-                      <a href="javascript:; " onclick="load_fn()"   style="color: #e63735">登录</a>
-                      成为会员
-                     <php>}else{</php> 
-                         <a href="javascript:;" id="exit" style="color: #e63735">退出</a>
-                    <php>}</php>
-                   
-                   </div> 
+                    <div class="nav-login">欢迎光临趣书网，请
+                        <php>if(!session("auth")){</php>
+                        <a href="javascript:;" onclick="reg_fn()" class="reg_btn" style="color: #e63735;">注册
+                        </a>或
+                        <a href="javascript:; " onclick="load_fn()" style="color: #e63735">登录</a>
+                        成为会员
+                        <php>}else{</php>
+                        <a href="javascript:;" id="exit" style="color: #e63735">退出</a>
+                        <php>}</php>
+
+                    </div>
                 </li>
-                <li class="nav-item"><a class="nav-item-bo">购物车<b class="car-num">0</b></a></li>
+             
                 <li class="nav-item"><a class="nav-item-bo">我的订单</a></li>
                 <li class="nav-item"><a class="nav-item-bo">原创征文</a></li>
                 <li class="nav-item"><a class="nav-item-bo">我的趣书</a></li>
@@ -83,7 +83,7 @@
     <div class="header-main">
         <div class="h-left">
             <div class="logo-h">
-                <a href="{:U('index/index')}" class="clearfix"> 
+                <a href="{:U('index/index')}" class="clearfix">
                     <img src="__HOME__/imgs/logomain.jpg" alt="">
                 </a>
             </div>
@@ -91,18 +91,18 @@
         <div class="h-main">
             <div class="search-box">
                 <div class="search">
-                <form action="{:U('book/booklist')}" method="get">
-                    <div class="search-text">
-                        <input type="text" style="outline: medium;border: none" 
-                            name="bk_keyword" 
-                        placeholder="书名/作者">
-                    </div> 
-                    <div class="search-select" id="sort">
-                        <button type="submit" class="text">
-                            搜索书籍
-                        </button>  
-                    </div>
-                </form>
+                    <form action="{:U('book/booklist')}" method="get">
+                        <div class="search-text">
+                            <input type="text" style="outline: medium;border: none"
+                                   name="bk_keyword"
+                                   placeholder="书名/作者">
+                        </div>
+                        <div class="search-select" id="sort">
+                            <button type="submit" class="text">
+                                搜索书籍
+                            </button>
+                        </div>
+                    </form>
 
                     <div class="search-icon">
                         <div class="search-icon-right">
@@ -110,7 +110,12 @@
                         </div>
                         <div class="search-icon-left">
 
-                            <a href="{:U('user/mycar')}">购物车 0</a>
+                            <a href="{:U('user/mycar')}">
+                                购物车
+                                <span class="carNum">
+                                        {$resultCarNum}
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -130,3 +135,4 @@
 <div class="container main">
 
 
+</div>
