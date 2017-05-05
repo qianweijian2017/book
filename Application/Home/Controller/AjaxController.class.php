@@ -152,7 +152,7 @@ class AjaxController extends Controller
 		 		 			"info"=>"加入收藏成功"
 		 		 			)
 	 		 		);
-	 		 		$book->where("id=$id")->setInc("book_collect",1)    //收藏量+1 
+	 		 		$book->where("id=$id")->setInc("book_collect",1);    //收藏量+1 
 	 		 		exit;
 	 			} 
 		 	}else{ 
